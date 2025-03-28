@@ -13,12 +13,12 @@
 
 ---
 
-#  insurance langgraph  
-### 보험 도메인에 특화된 LangGraph 기반 멀티소스 RAG QA 시스템
+### Insurance Langgraph  
+- 보험 도메인에 특화된 LangGraph 기반 멀티소스 RAG QA 시스템
 
 ## 🔍 개요
 
-`insurance_langgraph`는 보험업 고객의 자연어 질의에 대해 웹, 고객DB, 보험 문서 등 다양한 소스에서 정보를 추출해 자동으로 답변을 생성하는 QA 시스템입니다.
+`insurance_langgraph`는 보험업에서 고객의 질문에 대해 웹, 고객DB, 보험 문서 등 다양한 소스에서 정보를 추출해 자동으로 답변을 생성하는 QA 시스템입니다.
 
 LangGraph를 기반으로 조건에 따라 경로가 분기되며, 각 노드는 독립적인 기능을 수행하여 멀티소스 RAG 구조를 구성합니다.
 
@@ -29,7 +29,7 @@ LangGraph를 기반으로 조건에 따라 경로가 분기되며, 각 노드는
 
 ---
 
-## 🧩 시스템 구조
+## 시스템 구조
 
 LangGraph를 기반으로 다음과 같은 흐름으로 질문을 처리합니다:
 
