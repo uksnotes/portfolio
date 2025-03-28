@@ -44,3 +44,31 @@ graph TD
     F --> I[최종 응답]
     G --> I
     H --> I
+
+
+
+## 예시 화면
+
+아래는 보험 문서 기반 응답 예시 화면들입니다.
+
+#### 🖼️ Example 1  
+![example1](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example1.png)
+
+#### 🖼️ Example 2  
+![example2](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example2.png)
+
+#### 🖼️ Example 3  
+![example3](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example3.png)
+
+#### 🖼️ Example 4  
+![example4](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example4.png)
+
+#### 🖼️ Example 5  
+![example5](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example5.png)
+
+#### 🖼️ Example 6  
+![example6](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example6.png)
+
+#### 🖼️ Example 7  
+![example7](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example7.png)
+
