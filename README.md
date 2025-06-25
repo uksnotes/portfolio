@@ -35,16 +35,18 @@ LangGraph를 기반으로 다음과 같은 흐름으로 질문을 처리합니�
 
 ```mermaid
 graph TD
-    A[사용자 질문] --> B[질문 라우팅]
-    B --> C[웹 검색]
-    B --> D[고객 정보 조회]
-    B --> E[보험 문서 검색]
-    C --> F[웹 기반 응답 생성]
-    D --> G[KCD 코드 통계 조회<br>유사 심사 사례 확인<br>고객 데이터를 기반으로 보고서 생성]
-    E --> H[문서 기반 응답 생성]
-    F --> I[최종 응답]
-    G --> I
-    H --> I
+    A[로그인 페이지] --> B[관리자 승인]
+    B --> C[질문 입력(사용자 질문)]
+    C --> D[질문 라우팅]
+    D --> E[웹 검색]
+    D --> F[고객 정보 조회]
+    D --> G[보험 문서 검색]
+    E --> H[웹 기반 응답 생성]
+    F --> I[KCD 코드 통계 조회<br>유사 심사 사례 확인<br>고객 데이터 기반 보고서 생성]
+    G --> J[문서 기반 응답 생성]
+    H --> K[최종 응답]
+    I --> K
+    J --> K
 ```
 
 ---
@@ -53,24 +55,30 @@ graph TD
 
 아래는 보험 문서 기반 응답 예시 화면들입니다.
 
-#### 🖼️ Example 1  
-![example1](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example1.png)
+#### 🖼️ Login Page
+![ChatBot Image1](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/main.png)
 
-#### 🖼️ Example 2  
-![example2](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example2.png)
+#### 🖼️ Registration Page
+![ChatBot Image1](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/user.png)
 
-#### 🖼️ Example 3  
-![example3](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example3.png)
+#### 🖼️ ChatBot Image1
+![ChatBot Image1](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example1.png)
 
-#### 🖼️ Example 4  
-![example4](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example4.png)
+#### 🖼️ ChatBot Image2
+![ChatBot Image2](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example2.png)
 
-#### 🖼️ Example 5  
-![example5](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example5.png)
+#### 🖼️ ChatBot Image3
+![ChatBot Image3](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example3.png)
 
-#### 🖼️ Example 6  
-![example6](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example6.png)
+#### 🖼️ ChatBot Image4
+![ChatBot Image4](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example4.png)
 
-#### 🖼️ Example 7  
-![example7](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example7.png)
+#### 🖼️ ChatBot Image5
+![ChatBot Image5](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example5.png)
+
+#### 🖼️ ChatBot Image6
+![ChatBot Image6](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example6.png)
+
+#### 🖼️ ChatBot Image7
+![ChatBot Image7](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example7.png)
 
