@@ -1,6 +1,6 @@
 # Changuk Lee (이창욱)
 
-**Data Scientist & Data Analyst**
+**Data Scientist & Data Analyst** | [About Me](https://htmlpreview.github.io/?https://github.com/uksnotes/portfolio/blob/main/about_me/aboutme.html)
 
 [![GitHub](https://img.shields.io/badge/GitHub-uksnotes-181717?style=flat&logo=github)](https://github.com/uksnotes)
 [![Email](https://img.shields.io/badge/Email-leeccuu@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:leeccuu@gmail.com)
@@ -24,7 +24,7 @@
 질문 입력 → 라우팅 → [웹 검색 | 고객정보 조회 | 보험문서 RAG] → LLM 응답 생성
 ```
 
-<details>
+<details open>
 <summary>📸 시스템 스크린샷</summary>
 
 | Login | ChatBot |
@@ -55,7 +55,7 @@
 - 캔들 차트(일봉/월봉) + 이동평균선
 - 팩터별 분석 코멘트 및 매매 레벨 자동 산출
 
-<details>
+<details open>
 <summary>📸 시스템 스크린샷</summary>
 
 | 스코어 테이블 | 종목 상세 분석 |
@@ -104,7 +104,7 @@ UCI 가정용 전력 소비 데이터를 PySpark로 전처리하고, Facebook Pr
 
 **Tech Stack:** `React` `Tailwind CSS` `Supabase` `Google Gemini API`
 
-<details>
+<details open>
 <summary>📸 시스템 스크린샷</summary>
 
 | 메인 화면 | 이미지 생성 |
