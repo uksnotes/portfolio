@@ -1,84 +1,109 @@
-# 📁 Uks Portfolio
+# Changwook Lee (이창욱)
 
+**Data Scientist & AI Engineer**
 
-## ✅ 프로젝트 목록
+[![GitHub](https://img.shields.io/badge/GitHub-uksnotes-181717?style=flat&logo=github)](https://github.com/uksnotes)
+[![Email](https://img.shields.io/badge/Email-leeccuu@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:leeccuu@gmail.com)
 
-### 1. Credit Card Fraud Detection  
-
-### 2. Global Active Power Anomaly Detection  
-
-### 3. Insurance LangGraph  
-- 보험 도메인 특화 멀티소스 RAG 기반 QA 시스템  
-- 고객정보 + 웹검색 + 문서 기반 통합 응답 생성
+데이터 기반 문제 정의부터 모델 설계, 서비스 연동까지 전 과정을 수행하는 AI 엔지니어입니다.  
+자동화와 효율화 관점에서 복잡한 문제를 구조화하고 실무에서 바로 활용 가능한 형태로 구현합니다.
 
 ---
 
-### Insurance Langgraph  
-- 보험 도메인에 특화된 LangGraph 기반 멀티소스 RAG QA 시스템
+## Projects
 
-## 🔍 개요
+### 1. Insurance LangGraph — 보험 도메인 AI 챗봇
 
-`insurance_langgraph`는 보험업에서 고객의 질문에 대해 웹, 고객DB, 보험 문서 등 다양한 소스에서 정보를 추출해 자동으로 답변을 생성하는 QA 시스템입니다.
+> LangGraph 기반 멀티소스 RAG QA 시스템
 
-LangGraph를 기반으로 조건에 따라 경로가 분기되며, 각 노드는 독립적인 기능을 수행하여 멀티소스 RAG 구조를 구성합니다.
+보험 약관, 고객 DB, 웹 검색 등 다양한 소스에서 정보를 추출해 자동 응답을 생성하는 챗봇입니다. LangGraph의 조건 분기 구조를 활용하여 질문 유형에 따라 최적의 데이터 소스를 선택합니다.
 
-**주요 응답 방식:**
-- 웹 검색 기반 LLM 응답  
-- 고객 정보 기반 의사결정 지원
-- 보험 문서(RAG PDF) 기반 응답
+**Tech Stack:** `Python` `LangGraph` `LangChain` `FAISS` `Streamlit` `OpenAI API`
 
----
-
-## 시스템 구조
-
-LangGraph를 기반으로 다음과 같은 흐름으로 질문을 처리합니다:
-
-```mermaid
-graph TD
-    A["로그인 페이지"] --> B["관리자 승인"]
-    B --> C["질문 입력"]
-    C --> D["질문 라우팅"]
-    D --> E["웹 검색"]
-    D --> F["고객 정보 조회"]
-    D --> G["보험 문서 검색"]
-    E --> H["웹 기반 응답 생성"]
-    F --> I["KCD 통계/유사사례/보고서"]
-    G --> J["문서 기반 응답 생성"]
-    H --> K["최종 응답"]
-    I --> K
-    J --> K
+```
+질문 입력 → 라우팅 → [웹 검색 | 고객정보 조회 | 보험문서 RAG] → LLM 응답 생성
 ```
 
+<details>
+<summary>📸 시스템 스크린샷</summary>
+
+| Login | ChatBot |
+|:---:|:---:|
+| ![Login](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/main.png) | ![ChatBot](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example1.png) |
+
+| 고객정보 기반 응답 | 보험문서 RAG 응답 |
+|:---:|:---:|
+| ![Example2](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example2.png) | ![Example3](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example3.png) |
+
+</details>
+
+📂 [`insurance_langgraph/`](./insurance_langgraph)
+
 ---
 
-## 예시 화면
+### 2. Stock Analyzer — 국내 주식 팩터 분석기
 
-아래는 보험 문서 기반 응답 예시 화면들입니다.
+> 10-Factor 모델 기반 KOSPI TOP 200 종목 스코어링 시스템
 
-#### 🖼️ Login Page
-![ChatBot Image1](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/main.png)
+단기 기술적 분석(이평선, RSI, MACD, 볼린저 등)과 중장기 가치 분석(PER, PBR, 배당 등)을 결합한 10-Factor 스코어링 모델로, 종목별 점수를 산출하고 차트·방어 라인까지 자동 생성합니다.
 
-#### 🖼️ Registration Page
-![ChatBot Image1](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/user.png)
+**Tech Stack:** `Python` `Flask` `NumPy` `Pandas` `Lightweight Charts` `Naver Finance API`
 
-#### 🖼️ ChatBot Image1
-![ChatBot Image1](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example1.png)
+**주요 기능:**
+- 단기 / 중장기 모드 전환
+- 섹터별 필터링 및 종목 검색
+- 캔들 차트(일봉/월봉) + 이동평균선
+- 팩터별 분석 코멘트 및 매매 레벨 자동 산출
 
-#### 🖼️ ChatBot Image2
-![ChatBot Image2](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example2.png)
+📂 [`stock/`](./stock)
 
-#### 🖼️ ChatBot Image3
-![ChatBot Image3](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example3.png)
+---
 
-#### 🖼️ ChatBot Image4
-![ChatBot Image4](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example4.png)
+### 3. Credit Card Fraud Detection
 
-#### 🖼️ ChatBot Image5
-![ChatBot Image5](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example5.png)
+> 불균형 데이터 환경에서의 이상 거래 탐지 모델
 
-#### 🖼️ ChatBot Image6
-![ChatBot Image6](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example6.png)
+Kaggle 신용카드 거래 데이터(284K건)를 활용한 사기 탐지 분류 모델입니다. 극심한 클래스 불균형(0.17%) 환경에서 SMOTE 리샘플링과 다양한 ML 알고리즘(Logistic Regression, SVM, Random Forest 등)을 비교 분석했습니다.
 
-#### 🖼️ ChatBot Image7
-![ChatBot Image7](https://github.com/uksnotes/portfolio/raw/main/insurance_langgraph/example/example7.png)
+**Tech Stack:** `Python` `scikit-learn` `Pandas` `Seaborn` `t-SNE`
 
+📂 [`credit_card_fraud_detection/`](./credit_card_fraud_detection)
+
+---
+
+### 4. Global Active Power — 시계열 이상 탐지
+
+> PySpark + Prophet 기반 전력 소비 이상 탐지
+
+UCI 가정용 전력 소비 데이터를 PySpark로 전처리하고, Facebook Prophet으로 시계열 예측 및 이상치를 탐지합니다. 분산 처리 환경에서의 대용량 시계열 분석 파이프라인 구현 사례입니다.
+
+**Tech Stack:** `PySpark` `Prophet` `Pandas` `Matplotlib`
+
+📂 [`pyspark_prophet/`](./pyspark_prophet)
+
+---
+
+### 5. LunchChat — AI 점심 메이트 매칭
+
+> Gemini API 기반 이미지 생성 웹 서비스
+
+음식 키워드를 입력하면 AI가 점심 메이트 이미지와 추천 메시지를 생성하는 웹 앱입니다. Supabase 인증 및 생성 이력 관리, Gemini API를 활용한 이미지 생성 기능을 포함합니다.
+
+**Tech Stack:** `Next.js 16` `React 19` `TypeScript` `Tailwind CSS` `Supabase` `Google Gemini API`
+
+📂 [`website-project/`](./website-project)
+
+---
+
+## Education
+
+| 학교 | 전공 | 기간 |
+|---|---|---|
+| **서울대학교** (석사) | 데이터사이언스학과 | 2022.03 ~ 2024.02 |
+| **University of Illinois at Urbana-Champaign** (학사) | 통계학, 경제학 복수전공 | 2015.08 ~ 2021.05 |
+
+---
+
+## Skills
+
+`Python` `SQL` `scikit-learn` `PySpark` `LangGraph` `LangChain` `RAG` `Streamlit` `Flask` `Next.js` `TypeScript` `Supabase` `Prompt Engineering`

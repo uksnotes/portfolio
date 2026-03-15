@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이창욱 | uksnotes</title>
+  <style>
+    body { font-family: 'Helvetica Neue', sans-serif; background: #ffffff; color: #333; line-height: 1.6; margin: 0 auto; max-width: 860px; padding: 2rem; }
+    h1 { font-size: 2.4rem; margin-bottom: 0.2rem; }
+    h2 { font-size: 1.6rem; border-bottom: 1px solid #ccc; padding-bottom: 0.3rem; margin-top: 2rem; }
+    h3 { margin-top: 1.4rem; }
+    p, li { font-size: 1rem; }
+    ul { margin: 0; padding-left: 20px; }
+    .tag { background: #f0f0f0; padding: 4px 8px; border-radius: 4px; font-size: 0.9rem; display: inline-block; margin: 4px 6px 4px 0; }
+    .contact { margin-bottom: 1rem; }
+    a { color: #0077cc; text-decoration: none; }
+    .project-card { background: #fafafa; border: 1px solid #eee; border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 1rem; }
+    .project-card h3 { margin-top: 0; margin-bottom: 0.4rem; }
+    .project-card p { margin: 0.3rem 0; font-size: 0.95rem; color: #555; }
+    .tech-tags { margin-top: 0.5rem; }
+    .tech-tags .tag { font-size: 0.8rem; background: #e8f4fd; color: #0077cc; }
+  </style>
+</head>
+<body>
+
+<h1>이창욱</h1>
+<p class="contact">
+  📍 서울, 대한민국 | ✉️ leeccuu@gmail.com | 🔗 <a href="https://github.com/uksnotes" target="_blank">GitHub Portfolio</a>
+</p>
+
+<h2>학력</h2>
+<ul>
+  <li><strong>서울대학교</strong> — 데이터사이언스학과 전공 (석사, 2022.03 ~ 2024.02)</li>
+  <li><strong>University of Illinois at Urbana-Champaign</strong> — 통계학, 경제학 복수전공 (학사, 2015.08 ~ 2021.05)</li>
+</ul>
+
+<h2>요약</h2>
+<p>
+  데이터 기반 문제를 정의하고, 이를 실제 서비스에 연결하는 AI 모델을 설계 및 운영한 경험이 있는 분석가입니다.<br>
+  기획, 검증, 시스템 연동, 사용자 화면까지 전 과정에서 참여하여 실질적 성과를 도출한 경험이 있습니다.<br>
+  자동화와 효율화 관점에서 복잡한 문제를 구조화하고 실무에서 바로 쓰일 수 있는 형태로 구현하는데 강점을 가지고 있습니다.
+</p>
+
+<h2>프로젝트 경험</h2>
+
+<h3>우량 고객 자동 승인 시스템 구축 (2Q PASS) | 2024.09 ~ 2025.04</h3>
+<ul>
+  <li>370만 고객 데이터를 클러스터링하여 우량 고객군 19개 정의 및 자동 승인 룰 설계</li>
+  <li>현대해상 주력 상품인 퍼펙트플러스, 굿앤굿스타 전체 체결 계약의 45% 이상이 2Q PASS를 통해 유입됨</li>
+  <li>국내 특허 출원 및 다수 언론 보도</li>
+  <li><a href="http://www.wikileaks-kr.org/news/articleView.html?idxno=168430" target="_blank">보도 보기</a></li>
+</ul>
+
+<h3>질병 고지 자동화 모델 구축 (올바로 모델) | 2024.10 ~ 2025.06</h3>
+<ul>
+  <li>병력, 보험 가입 담보, 보험 청구 데이터를 분석해 고지 필요 질병을 자동 분류</li>
+  <li>심사자 판단이 필요한 고위험 질병은 분기 처리하여 신뢰도 향상</li>
+  <li>심사 정확도 85%, 평균 심사 시간 90초 → 70초로 개선</li>
+  <li>월 43만 건 자동화 → 심사 기준 표준화 및 일관성 확보</li>
+</ul>
+
+<h3>보험 약관 AI 챗봇 구축 (올바로 챗봇) | 2025.02 ~ 2025.05</h3>
+<ul>
+  <li>웹, 고객 DB, 보험 문서를 기반으로 질의응답이 가능한 QA 챗봇 설계</li>
+  <li>LangGraph 기반 경로 분기 구조 및 실시간 문서, 통계 검색 적용</li>
+  <li>웹 검색, 고객 정보, PDF 문서를 활용해 조건별 자동 응답 수행</li>
+  <li>반복 질문 처리 시간 180초 → 60초로 단축 목표</li>
+  <li><a href="https://github.com/uksnotes/portfolio/tree/main/insurance_langgraph" target="_blank">PoC 코드 보기</a></li>
+</ul>
+
+<h2>포트폴리오 프로젝트</h2>
+
+<div class="project-card">
+  <h3>Insurance LangGraph — 보험 도메인 AI 챗봇</h3>
+  <p>LangGraph 기반 멀티소스 RAG QA 시스템. 보험 약관, 고객 DB, 웹 검색에서 정보를 추출해 자동 응답을 생성합니다. 질문 유형에 따라 최적의 데이터 소스를 자동 선택하는 조건 분기 구조를 적용했습니다.</p>
+  <div class="tech-tags">
+    <span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">FAISS</span><span class="tag">Streamlit</span><span class="tag">OpenAI API</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>Stock Analyzer — 국내 주식 팩터 분석기</h3>
+  <p>KOSPI TOP 200 종목 대상 10-Factor 스코어링 시스템. 단기 기술적 분석(이평선, RSI, MACD 등)과 중장기 가치 분석(PER, PBR, 배당 등)을 결합하여 종목별 점수를 산출하고 차트·매매 레벨을 자동 생성합니다.</p>
+  <div class="tech-tags">
+    <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">NumPy</span><span class="tag">Lightweight Charts</span><span class="tag">Naver API</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>Credit Card Fraud Detection</h3>
+  <p>284K건 신용카드 거래 데이터에서 극심한 클래스 불균형(0.17%) 환경의 이상 거래 탐지. SMOTE 리샘플링과 다양한 ML 알고리즘(Logistic Regression, SVM, Random Forest 등) 비교 분석을 수행했습니다.</p>
+  <div class="tech-tags">
+    <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Pandas</span><span class="tag">t-SNE</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>Global Active Power — 시계열 이상 탐지</h3>
+  <p>UCI 가정용 전력 소비 데이터를 PySpark로 전처리하고 Prophet으로 시계열 예측 및 이상치를 탐지합니다. 분산 처리 환경에서의 대용량 시계열 분석 파이프라인 구현 사례입니다.</p>
+  <div class="tech-tags">
+    <span class="tag">PySpark</span><span class="tag">Prophet</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>LunchChat — AI 점심 메이트 매칭</h3>
+  <p>음식 키워드를 입력하면 Gemini API가 점심 메이트 이미지와 추천 메시지를 생성하는 웹 앱. Supabase 인증, 생성 이력 관리 등 풀스택 기능을 포함합니다.</p>
+  <div class="tech-tags">
+    <span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">Supabase</span><span class="tag">Gemini API</span>
+  </div>
+</div>
+
+<h2>보유 역량</h2>
+<p>
+  <span class="tag">Python</span>
+  <span class="tag">SQL</span>
+  <span class="tag">scikit-learn</span>
+  <span class="tag">PySpark</span>
+  <span class="tag">LangGraph</span>
+  <span class="tag">Streamlit</span>
+  <span class="tag">Flask</span>
+  <span class="tag">Next.js</span>
+  <span class="tag">Prompt Engineering</span>
+  <span class="tag">RAG</span>
+</p>
+
+</body>
+</html>

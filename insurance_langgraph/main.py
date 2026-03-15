@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from langchain_core.messages.chat import ChatMessage
 
 from dotenv import load_dotenv
@@ -8,6 +9,7 @@ from langsmith import Client
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_teddynote.messages import random_uuid
 
+# 환경 변수 로드 (로컬에서는 .env 파일에서, 배포에서는 Streamlit secrets에서)
 load_dotenv()
 
 # 프로젝트 이름을 입력합니다.
