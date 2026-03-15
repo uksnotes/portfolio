@@ -1,0 +1,28 @@
+# Environment
+.env
+.env.*
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# Build
+.next/
+out/
+build/
+
+# Cache & OS
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+# Data
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+
+# IDE
+.vscode/
+.idea/

@@ -1,11 +1,11 @@
-# Changwook Lee (이창욱)
+# Changuk Lee (이창욱)
 
-**Data Scientist & AI Engineer**
+**Data Scientist & Data Analyst**
 
 [![GitHub](https://img.shields.io/badge/GitHub-uksnotes-181717?style=flat&logo=github)](https://github.com/uksnotes)
 [![Email](https://img.shields.io/badge/Email-leeccuu@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:leeccuu@gmail.com)
 
-데이터 기반 문제 정의부터 모델 설계, 서비스 연동까지 전 과정을 수행하는 AI 엔지니어입니다.  
+데이터 기반 문제 정의부터 모델 설계, 서비스 연동까지 전 과정을 수행하는 데이터 분석가입니다.  
 자동화와 효율화 관점에서 복잡한 문제를 구조화하고 실무에서 바로 활용 가능한 형태로 구현합니다.
 
 ---
@@ -47,13 +47,26 @@
 
 단기 기술적 분석(이평선, RSI, MACD, 볼린저 등)과 중장기 가치 분석(PER, PBR, 배당 등)을 결합한 10-Factor 스코어링 모델로, 종목별 점수를 산출하고 차트·방어 라인까지 자동 생성합니다.
 
-**Tech Stack:** `Python` `Flask` `NumPy` `Pandas` `Lightweight Charts` `Naver Finance API`
+**Tech Stack:** `Python` `NumPy` `Pandas` `Lightweight Charts` `Naver Finance API`
 
 **주요 기능:**
 - 단기 / 중장기 모드 전환
 - 섹터별 필터링 및 종목 검색
 - 캔들 차트(일봉/월봉) + 이동평균선
 - 팩터별 분석 코멘트 및 매매 레벨 자동 산출
+
+<details>
+<summary>📸 시스템 스크린샷</summary>
+
+| 스코어 테이블 | 종목 상세 분석 |
+|:---:|:---:|
+| ![Table](https://github.com/uksnotes/portfolio/raw/main/stock/examples/example1.png) | ![Detail](https://github.com/uksnotes/portfolio/raw/main/stock/examples/example2.png) |
+
+| 차트 분석 | 섹터 요약 |
+|:---:|:---:|
+| ![Chart](https://github.com/uksnotes/portfolio/raw/main/stock/examples/example3.png) | ![Sector](https://github.com/uksnotes/portfolio/raw/main/stock/examples/example4.png) |
+
+</details>
 
 📂 [`stock/`](./stock)
 
@@ -89,9 +102,22 @@ UCI 가정용 전력 소비 데이터를 PySpark로 전처리하고, Facebook Pr
 
 음식 키워드를 입력하면 AI가 점심 메이트 이미지와 추천 메시지를 생성하는 웹 앱입니다. Supabase 인증 및 생성 이력 관리, Gemini API를 활용한 이미지 생성 기능을 포함합니다.
 
-**Tech Stack:** `Next.js 16` `React 19` `TypeScript` `Tailwind CSS` `Supabase` `Google Gemini API`
+**Tech Stack:** `React` `Tailwind CSS` `Supabase` `Google Gemini API`
 
-📂 [`website-project/`](./website-project)
+<details>
+<summary>📸 시스템 스크린샷</summary>
+
+| 메인 화면 | 이미지 생성 |
+|:---:|:---:|
+| ![Main](https://github.com/uksnotes/portfolio/raw/main/lunch_chat/examples/example1.png) | ![Generate](https://github.com/uksnotes/portfolio/raw/main/lunch_chat/examples/example2.png) |
+
+| 결과 화면 | 히스토리 |
+|:---:|:---:|
+| ![Result](https://github.com/uksnotes/portfolio/raw/main/lunch_chat/examples/example3.png) | ![History](https://github.com/uksnotes/portfolio/raw/main/lunch_chat/examples/example4.png) |
+
+</details>
+
+📂 [`lunch_chat/`](./lunch_chat)
 
 ---
 
@@ -106,4 +132,4 @@ UCI 가정용 전력 소비 데이터를 PySpark로 전처리하고, Facebook Pr
 
 ## Skills
 
-`Python` `SQL` `scikit-learn` `PySpark` `LangGraph` `LangChain` `RAG` `Streamlit` `Flask` `Next.js` `TypeScript` `Supabase` `Prompt Engineering`
+`Python` `SQL` `scikit-learn` `PySpark` `LangGraph` `LangChain` `RAG` `Streamlit` `Supabase`
