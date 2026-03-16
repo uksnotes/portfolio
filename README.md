@@ -1,6 +1,6 @@
 # Changuk Lee (이창욱)
 
-**Data Scientist & Data Analyst** | [About Me](https://htmlpreview.github.io/?https://github.com/uksnotes/portfolio/blob/main/about_me/aboutme.html)
+**Data Scientist & Data Analyst** | [About Me](https://uksnotes.github.io/uksnote.github.io/)
 
 [![GitHub](https://img.shields.io/badge/GitHub-uksnotes-181717?style=flat&logo=github)](https://github.com/uksnotes)
 [![Email](https://img.shields.io/badge/Email-leeccuu@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:leeccuu@gmail.com)
