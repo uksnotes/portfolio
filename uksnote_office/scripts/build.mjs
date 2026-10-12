@@ -1,0 +1,10 @@
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {build as viteBuild} from 'vite';
+import react from '@vitejs/plugin-react';
+import {build as esbuild} from 'esbuild';
+const root=path.dirname(path.dirname(fileURLToPath(import.meta.url)));
+process.chdir(root);
+await viteBuild({configFile:false,root,publicDir:'source/public',resolve:{alias:{'@':path.join(root,'source')}},plugins:[react()],css:{postcss:path.join(root,'source')},build:{outDir:'static',emptyOutDir:true,chunkSizeWarningLimit:1600}});
+await esbuild({entryPoints:['runtime/server.ts'],outfile:'runtime-dist/server.mjs',bundle:true,platform:'node',format:'esm',target:'node22',packages:'bundle',alias:{'cloudflare:workers':path.join(root,'runtime/environment.ts'),'@':path.join(root,'source')},logLevel:'info',legalComments:'linked',sourcemap:true});
+console.log('Built frontend + local API. Run: python app.py');

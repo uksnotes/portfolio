@@ -1,0 +1,17 @@
+import {load} from 'cheerio/slim';
+const number=(v:any)=>{if(v==null)return null;const s=String(v).replace(/[,원배%\s]/g,'');if(!s||!/^[-+]?\d*\.?\d+$/.test(s))return null;return Number(s);};
+export function parseQuote(html:string,code:string){
+ const $=load(html);let data:any;try{data=JSON.parse($('#__NEXT_DATA__').text());}catch{throw new Error('공개 시세 페이지의 형식을 확인할 수 없습니다.');}
+ const results=(data?.props?.pageProps?.dehydratedState?.queries||[]).map((q:any)=>q.state?.data?.result).filter(Boolean);
+ const q=results.find((r:any)=>r.itemCode===code&&r.closePrice!=null);if(!q||!(number(q.closePrice)!>0))throw new Error('공개 페이지에서 해당 종목 현재가를 찾지 못했습니다.');
+ const detail=results.find((r:any)=>Array.isArray(r.totalInfos))||{};const info=Object.fromEntries((detail.totalInfos||[]).map((x:any)=>[x.code,number(x.value)]));
+ const history=(detail.dealTrendInfos||[]).filter((x:any)=>x.itemCode===code&&/^\d{8}$/.test(x.bizdate)&&number(x.closePrice)!>0).map((x:any)=>({date:x.bizdate,close:number(x.closePrice),volume:number(x.accumulatedTradingVolume)})).sort((a:any,b:any)=>a.date.localeCompare(b.date));
+ return {code,name:q.stockName,price:number(q.closePrice),change:number(q.fluctuationsRatio),volume:info.accumulatedTradingVolume??null,per:info.per??null,pbr:info.pbr??null,eps:info.eps??null,history,marketAt:q.localTradedAt||null,marketStatus:q.marketStatus||null,delayMinutes:q.stockExchangeType?.delayTime??null,chartYear:typeof q.imageCharts?.areaYear==='string'&&/^https:\/\/financial-vn\.pstatic\.net\/chart\//.test(q.imageCharts.areaYear)?q.imageCharts.areaYear:null,source:'네이버 증권 공개 페이지',sourceUrl:`https://m.stock.naver.com/domestic/stock/${code}/total`};
+}
+export function parseNews(html:string){const $=load(html),seen=new Set<string>(),items:any[]=[];$('.sa_item').each((_,el)=>{const node=$(el),a=node.find('a.sa_text_title').first(),title=a.text().replace(/\s+/g,' ').trim(),url=a.attr('href')||'';if(!title||!/^https:\/\/n\.news\.naver\.com\/mnews\/article\/\d+\/\d+(?:\?|$)/.test(url)||seen.has(title))return;seen.add(title);items.push({title,url,summary:node.find('.sa_text_lede').text().replace(/\s+/g,' ').trim().slice(0,350),publisher:node.find('.sa_text_press').text().trim(),publishedAt:null});});if(!items.length)throw new Error('네이버 뉴스 페이지에서 기사를 읽지 못했습니다. 이전 뉴스를 유지합니다.');return items.slice(0,10);}
+export function articleDate(html:string){const $=load(html);const raw=$('.media_end_head_info_datestamp[data-date-time]').first().attr('data-date-time')||$('meta[property="article:published_time"]').attr('content');if(!raw)return null;const iso=/^\d{4}-\d\d-\d\d \d\d:\d\d:\d\d$/.test(raw)?raw.replace(' ','T')+'+09:00':raw;return Number.isFinite(Date.parse(iso))?new Date(iso).toISOString():null;}
+
+export function parseRanking(html:string){const $=load(html),seen=new Set<string>(),items:any[]=[];
+ $('.rankingnews_box').each((_,el)=>{const box=$(el),row=box.find('.rankingnews_list li').first(),a=row.find('a.list_title').first(),title=a.text().replace(/\s+/g,' ').trim(),url=a.attr('href')||'';if(!title||!/^https:\/\/n\.news\.naver\.com\/(?:mnews\/)?article\/\d+\/\d+(?:\?|$)/.test(url)||seen.has(url.split('?')[0]))return;seen.add(url.split('?')[0]);items.push({title,url,summary:'',publisher:box.find('.rankingnews_name').first().text().trim(),publisherRank:1,publishedAt:null});});
+ if(!items.length)throw new Error('네이버 랭킹 페이지에서 기사를 읽지 못했습니다. 이전 뉴스를 유지합니다.');return items.slice(0,10);
+}

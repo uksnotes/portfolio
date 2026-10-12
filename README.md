@@ -12,7 +12,36 @@
 
 ## Projects
 
-### 1. Insurance LangGraph — 보험 도메인 AI 챗봇
+### 1. HI OFFICE — 3D 개인 업무 오피스
+
+> 투자 분석·뉴스·일정·AI 팀을 하나로 묶은 로컬 3D 워크스페이스
+
+3D 오피스 공간에서 캐릭터를 움직여 각 업무실로 들어가는 개인 업무 대시보드입니다. 코스피200 단기 매매 후보 랭킹(추세·모멘텀·거래량·가격 위치·변동성 5-Factor)과 5년 인터랙티브 차트, 뉴스 수집·핵심 요약, 월간 일정·TO-DO, 역할별 AI 분석가 팀(GPT / Claude), 아파트 실거래·매물 비교 기능을 제공합니다. Cloudflare D1 기반 웹 서비스 코드를 그대로 두고 로컬 Node 서버 + SQLite 어댑터로 감싸 `python app.py` 하나로 실행됩니다.
+
+**Tech Stack:** `React` `TypeScript` `Three.js` `Lightweight Charts` `Node.js` `SQLite` `Python` `OpenAI / Claude API`
+
+```
+python app.py → Node 로컬 서버 → [3D 오피스 | 분석실 | 뉴스룸 | 일정 보드 | AI 팀 | 부동산] → SQLite 저장
+```
+
+<details open>
+<summary>📸 시스템 스크린샷</summary>
+
+| 3D 오피스 | AI 팀 오피스 |
+|:---:|:---:|
+| ![Office](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example1.png) | ![AITeam](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example2.png) |
+
+| 코스피200 랭킹 | 뉴스룸 |
+|:---:|:---:|
+| ![Ranking](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example3.png) | ![News](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example4.png) |
+
+</details>
+
+📂 [`uksnote_office/`](./uksnote_office)
+
+---
+
+### 2. Insurance LangGraph — 보험 도메인 AI 챗봇
 
 > LangGraph 기반 멀티소스 RAG QA 시스템
 
@@ -41,7 +70,7 @@
 
 ---
 
-### 2. Stock Analyzer — 국내 주식 팩터 분석기
+### 3. Stock Analyzer — 국내 주식 팩터 분석기
 
 > 10-Factor 모델 기반 KOSPI TOP 200 종목 스코어링 시스템
 
@@ -72,7 +101,7 @@
 
 ---
 
-### 3. Credit Card Fraud Detection
+### 4. Credit Card Fraud Detection
 
 > 불균형 데이터 환경에서의 이상 거래 탐지 모델
 
@@ -84,7 +113,7 @@ Kaggle 신용카드 거래 데이터(284K건)를 활용한 사기 탐지 분류 
 
 ---
 
-### 4. Global Active Power — 시계열 이상 탐지
+### 5. Global Active Power — 시계열 이상 탐지
 
 > PySpark + Prophet 기반 전력 소비 이상 탐지
 
@@ -96,7 +125,7 @@ UCI 가정용 전력 소비 데이터를 PySpark로 전처리하고, Facebook Pr
 
 ---
 
-### 5. LunchChat — AI 점심 메이트 매칭
+### 6. LunchChat — AI 점심 메이트 매칭
 
 > Gemini API 기반 이미지 생성 웹 서비스
 
