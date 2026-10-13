@@ -1,0 +1,2 @@
+'use client';
+export default function SearchAttribution({job}:{job:any}){return <>{(job?.searchSuggestions||[]).slice(0,1).map((html:string,i:number)=><div className="search-attribution" key={i}><iframe title="Google 검색 출처 안내" sandbox="allow-popups allow-popups-to-escape-sandbox" referrerPolicy="no-referrer" srcDoc={'<meta http-equiv="Content-Security-Policy" content="default-src https:; script-src &#39;none&#39;; style-src &#39;unsafe-inline&#39;; form-action &#39;none&#39;"><base target="_blank">'+html}/></div>)}</>;}

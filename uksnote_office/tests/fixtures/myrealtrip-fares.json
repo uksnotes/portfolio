@@ -1,0 +1,3769 @@
+{
+  "trips": [
+    "A.ICN.A.TPE.2026-11-20",
+    "A.TPE.A.ICN.2026-11-24"
+  ],
+  "params": {
+    "adult": 1
+  },
+  "initialData": {
+    "tripType": "ROUND_TRIP",
+    "expiresAt": 1791793473902,
+    "firstPage": {
+      "status": "COMPLETED",
+      "contents": {
+        "items": [
+          {
+            "itemKey": "1",
+            "schedules": [
+              {
+                "airline": "LJ",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T09:35:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T11:30:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H55M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "LJ",
+                    "flightNumber": "0171",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T09:35:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T11:30:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H55M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "LJ",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T12:40:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T16:00:00",
+                  "terminal": "2"
+                },
+                "totalFlightTime": "PT2H20M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "LJ",
+                    "flightNumber": "0172",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T12:40:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T16:00:00",
+                      "terminal": "2"
+                    },
+                    "flightTime": "PT2H20M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 444500
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 444500
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 444500
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 444500
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 444500
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 446000
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 449000
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 484200
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 484200
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 484200
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 484200
+              },
+              {
+                "price": 484200
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 444500
+          },
+          {
+            "itemKey": "202",
+            "schedules": [
+              {
+                "airline": "7C",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T10:40:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T12:35:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H55M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "7C",
+                    "flightNumber": "6101",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T10:40:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T12:35:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H55M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "7C",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T13:35:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T17:00:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H25M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "7C",
+                    "flightNumber": "6102",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T13:35:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T17:00:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H25M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 441200
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 441200
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 441200
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 441200
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 441200
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 442600
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 445500
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 479600
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 479600
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 479600
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 479600
+              },
+              {
+                "price": 479600
+              }
+            ],
+            "tags": [],
+            "seatCount": 8,
+            "price": 441200
+          },
+          {
+            "itemKey": "359",
+            "schedules": [
+              {
+                "airline": "ZE",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T08:00:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T09:45:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H45M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "ZE",
+                    "flightNumber": "0881",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T08:00:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T09:45:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H45M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "7C",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T13:35:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T17:00:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H25M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "7C",
+                    "flightNumber": "6102",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T13:35:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T17:00:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H25M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 472300
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 472300
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 472900
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 472900
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 473900
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 475800
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 477400
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 497100
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 501600
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 501600
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 501600
+              },
+              {
+                "price": 501600
+              }
+            ],
+            "tags": [],
+            "seatCount": 8,
+            "price": 472300
+          },
+          {
+            "itemKey": "524",
+            "schedules": [
+              {
+                "airline": "KE",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T16:20:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T18:10:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H50M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "KE",
+                    "flightNumber": "2029",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T16:20:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T18:10:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H50M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "7C",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T13:35:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T17:00:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H25M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "7C",
+                    "flightNumber": "6102",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T13:35:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T17:00:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H25M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 499600
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 499600
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 500200
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 500200
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 501200
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 503300
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 504700
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 514700
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 519200
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 519200
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 519200
+              },
+              {
+                "price": 519200
+              }
+            ],
+            "tags": [],
+            "seatCount": 8,
+            "price": 499600
+          },
+          {
+            "itemKey": "326",
+            "schedules": [
+              {
+                "airline": "TR",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T22:55:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-21T00:35:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H40M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 1,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 30
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "TR",
+                    "flightNumber": "0873",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T22:55:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-21T00:35:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H40M",
+                    "isTechnicalStop": false,
+                    "addDay": 1,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 30
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "7C",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T13:35:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T17:00:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H25M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "7C",
+                    "flightNumber": "6102",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T13:35:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T17:00:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H25M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 473300
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 473900
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 473900
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 475000
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 477200
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 477200
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 478400
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 479100
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 484200
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 484200
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 484200
+              },
+              {
+                "price": 484200
+              }
+            ],
+            "tags": [],
+            "seatCount": 8,
+            "price": 473300
+          },
+          {
+            "itemKey": "4",
+            "schedules": [
+              {
+                "airline": "B7",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T11:40:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T13:30:00",
+                  "terminal": "2"
+                },
+                "totalFlightTime": "PT2H50M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "B7",
+                    "operatingCarrier": "BR",
+                    "flightNumber": "7027",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T11:40:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T13:30:00",
+                      "terminal": "2"
+                    },
+                    "flightTime": "PT2H50M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "BR",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T15:15:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T18:45:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H30M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "BR",
+                    "flightNumber": "0160",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T15:15:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T18:45:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H30M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 488200
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 488200
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 488200
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 488200
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 488200
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 489400
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 489400
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 492000
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 522400
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 522400
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 522400
+              },
+              {
+                "price": 522400
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 488200
+          },
+          {
+            "itemKey": "203",
+            "schedules": [
+              {
+                "airline": "OZ",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T16:20:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T18:10:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H50M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "OZ",
+                    "operatingCarrier": "KE",
+                    "flightNumber": "9839",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T16:20:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T18:10:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H50M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "OZ",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T11:05:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T14:40:00",
+                  "terminal": "2"
+                },
+                "totalFlightTime": "PT2H35M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "OZ",
+                    "flightNumber": "0712",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T11:05:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T14:40:00",
+                      "terminal": "2"
+                    },
+                    "flightTime": "PT2H35M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "BC",
+                "price": 531900
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 531900
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 531900
+              },
+              {
+                "promotionCardCode": "IBK",
+                "price": 531900
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 531900
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 531900
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 531900
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 531900
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 531900
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 531900
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 531900
+              },
+              {
+                "price": 531900
+              }
+            ],
+            "tags": [],
+            "seatCount": 4,
+            "price": 531900
+          },
+          {
+            "itemKey": "392",
+            "schedules": [
+              {
+                "airline": "LJ",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T09:35:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T11:30:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H55M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "LJ",
+                    "flightNumber": "0171",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T09:35:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T11:30:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H55M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "7C",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T13:35:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T17:00:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H25M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "7C",
+                    "flightNumber": "6102",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T13:35:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T17:00:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H25M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 478700
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 478700
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 479300
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 479300
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 480300
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 482400
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 483800
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 506700
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 511200
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 511200
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 511200
+              },
+              {
+                "price": 511200
+              }
+            ],
+            "tags": [],
+            "seatCount": 8,
+            "price": 478700
+          },
+          {
+            "itemKey": "1159",
+            "schedules": [
+              {
+                "airline": "7C",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T10:40:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T12:35:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H55M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "7C",
+                    "flightNumber": "6101",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T10:40:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T12:35:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H55M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "TR",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T18:10:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T21:40:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H30M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 30
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "TR",
+                    "flightNumber": "0872",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T18:10:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T21:40:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H30M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 30
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 471800
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 471800
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 472700
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 472700
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 473600
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 475400
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 478900
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 496700
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 502900
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 502900
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 502900
+              },
+              {
+                "price": 502900
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 471800
+          },
+          {
+            "itemKey": "334",
+            "schedules": [
+              {
+                "airline": "ZE",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T08:00:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T09:45:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H45M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "ZE",
+                    "flightNumber": "0881",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T08:00:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T09:45:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H45M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "TR",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T18:10:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T21:40:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H30M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 30
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "TR",
+                    "flightNumber": "0872",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T18:10:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T21:40:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H30M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 30
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 484700
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 484700
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 485600
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 485600
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 486600
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 488500
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 491800
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 509800
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 516000
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 516000
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 516000
+              },
+              {
+                "price": 516000
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 484700
+          },
+          {
+            "itemKey": "54",
+            "schedules": [
+              {
+                "airline": "CI",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T20:15:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T22:15:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT3H",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "CI",
+                    "flightNumber": "0163",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T20:15:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T22:15:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT3H",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "CI",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T07:50:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T11:20:00",
+                  "terminal": "2"
+                },
+                "totalFlightTime": "PT2H30M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "CI",
+                    "flightNumber": "0160",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T07:50:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T11:20:00",
+                      "terminal": "2"
+                    },
+                    "flightTime": "PT2H30M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 539800
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 539800
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 539800
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 539800
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 539800
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 541300
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 544500
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 580300
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 580300
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 580300
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 580300
+              },
+              {
+                "price": 580300
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 539800
+          },
+          {
+            "itemKey": "3",
+            "schedules": [
+              {
+                "airline": "KE",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T16:20:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T18:10:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H50M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "KE",
+                    "flightNumber": "2029",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T16:20:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T18:10:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H50M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "KE",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T19:25:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T22:55:00",
+                  "terminal": "2"
+                },
+                "totalFlightTime": "PT2H30M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "KE",
+                    "flightNumber": "2030",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T19:25:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T22:55:00",
+                      "terminal": "2"
+                    },
+                    "flightTime": "PT2H30M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 496200
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 496200
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 496200
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 496200
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 496200
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 497900
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 501100
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 518700
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 518700
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 518700
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 518700
+              },
+              {
+                "price": 518700
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 496200
+          },
+          {
+            "itemKey": "5",
+            "schedules": [
+              {
+                "airline": "BR",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T11:40:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T13:30:00",
+                  "terminal": "2"
+                },
+                "totalFlightTime": "PT2H50M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "BR",
+                    "flightNumber": "0169",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T11:40:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T13:30:00",
+                      "terminal": "2"
+                    },
+                    "flightTime": "PT2H50M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "B7",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T15:15:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T18:45:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H30M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "B7",
+                    "operatingCarrier": "BR",
+                    "flightNumber": "7026",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T15:15:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T18:45:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H30M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 488200
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 488200
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 488200
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 488200
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 488200
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 489400
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 489400
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 492000
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 522400
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 522400
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 522400
+              },
+              {
+                "price": 522400
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 488200
+          },
+          {
+            "itemKey": "301",
+            "schedules": [
+              {
+                "airline": "TR",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T22:55:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-21T00:35:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H40M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 1,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 30
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "TR",
+                    "flightNumber": "0873",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T22:55:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-21T00:35:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H40M",
+                    "isTechnicalStop": false,
+                    "addDay": 1,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 30
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "TR",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T18:10:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T21:40:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H30M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 30
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "TR",
+                    "flightNumber": "0872",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T18:10:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T21:40:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H30M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 30
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 485700
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 486600
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 486600
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 487700
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 489900
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 489900
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 491500
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 492800
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 498600
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 498600
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 498600
+              },
+              {
+                "price": 498600
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 485700
+          },
+          {
+            "itemKey": "204",
+            "schedules": [
+              {
+                "airline": "OZ",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T16:20:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T18:10:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H50M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "OZ",
+                    "operatingCarrier": "KE",
+                    "flightNumber": "9839",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T16:20:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T18:10:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H50M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "OZ",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T17:05:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T20:30:00",
+                  "terminal": "2"
+                },
+                "totalFlightTime": "PT2H25M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "OZ",
+                    "flightNumber": "0714",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T17:05:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T20:30:00",
+                      "terminal": "2"
+                    },
+                    "flightTime": "PT2H25M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "BC",
+                "price": 544400
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 544400
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 544400
+              },
+              {
+                "promotionCardCode": "IBK",
+                "price": 544400
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 544400
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 544400
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 544400
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 544400
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 544400
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 544400
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 544400
+              },
+              {
+                "price": 544400
+              }
+            ],
+            "tags": [],
+            "seatCount": 4,
+            "price": 544400
+          },
+          {
+            "itemKey": "367",
+            "schedules": [
+              {
+                "airline": "LJ",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T09:35:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T11:30:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H55M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "LJ",
+                    "flightNumber": "0171",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T09:35:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T11:30:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H55M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "TR",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T18:10:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T21:40:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H30M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 30
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "TR",
+                    "flightNumber": "0872",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T18:10:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T21:40:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H30M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 30
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 491100
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 491100
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 492000
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 492000
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 493000
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 495100
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 498200
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 519400
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 525600
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 525600
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 525600
+              },
+              {
+                "price": 525600
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 491100
+          },
+          {
+            "itemKey": "1160",
+            "schedules": [
+              {
+                "airline": "7C",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T10:40:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T12:35:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H55M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "7C",
+                    "flightNumber": "6101",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T10:40:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T12:35:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H55M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "LJ",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T12:40:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T16:00:00",
+                  "terminal": "2"
+                },
+                "totalFlightTime": "PT2H20M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "LJ",
+                    "flightNumber": "0172",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T12:40:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T16:00:00",
+                      "terminal": "2"
+                    },
+                    "flightTime": "PT2H20M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 512800
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 512800
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 513800
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 513800
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 514700
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 516500
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 520200
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 537800
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 544200
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 544200
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 544200
+              },
+              {
+                "price": 544200
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 512800
+          },
+          {
+            "itemKey": "25",
+            "schedules": [
+              {
+                "airline": "KE",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T16:20:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T18:10:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H50M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "KE",
+                    "flightNumber": "2029",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T16:20:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T18:10:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H50M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "KE",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T12:25:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T15:50:00",
+                  "terminal": "2"
+                },
+                "totalFlightTime": "PT2H25M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "KE",
+                    "flightNumber": "2026",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T12:25:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T15:50:00",
+                      "terminal": "2"
+                    },
+                    "flightTime": "PT2H25M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 511600
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 511600
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 511600
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 511600
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 511600
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 513300
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 516700
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 535200
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 535200
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 535200
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 535200
+              },
+              {
+                "price": 535200
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 511600
+          },
+          {
+            "itemKey": "55",
+            "schedules": [
+              {
+                "airline": "CI",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T20:15:00",
+                  "terminal": "2"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T22:15:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT3H",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "CI",
+                    "flightNumber": "0163",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T20:15:00",
+                      "terminal": "2"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T22:15:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT3H",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "CI",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T15:40:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T19:15:00",
+                  "terminal": "2"
+                },
+                "totalFlightTime": "PT2H35M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "QUANTITY",
+                  "allowance": 1
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "CI",
+                    "flightNumber": "0162",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T15:40:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T19:15:00",
+                      "terminal": "2"
+                    },
+                    "flightTime": "PT2H35M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "QUANTITY",
+                      "allowance": 1
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 539800
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 539800
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 539800
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 539800
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 539800
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 541300
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 544500
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 580300
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 580300
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 580300
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 580300
+              },
+              {
+                "price": 580300
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 539800
+          },
+          {
+            "itemKey": "335",
+            "schedules": [
+              {
+                "airline": "ZE",
+                "departure": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-20T08:00:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-20T09:45:00",
+                  "terminal": "1"
+                },
+                "totalFlightTime": "PT2H45M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "ZE",
+                    "flightNumber": "0881",
+                    "departure": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-20T08:00:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-20T09:45:00",
+                      "terminal": "1"
+                    },
+                    "flightTime": "PT2H45M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              },
+              {
+                "airline": "LJ",
+                "departure": {
+                  "airport": {
+                    "code": "TPE",
+                    "name": "타이완 타오위안 국제공항",
+                    "cityName": "타이베이",
+                    "cityCode": "TPE"
+                  },
+                  "at": "2026-11-24T12:40:00",
+                  "terminal": "1"
+                },
+                "arrival": {
+                  "airport": {
+                    "code": "ICN",
+                    "name": "인천국제공항",
+                    "cityName": "서울",
+                    "cityCode": "SEL"
+                  },
+                  "at": "2026-11-24T16:00:00",
+                  "terminal": "2"
+                },
+                "totalFlightTime": "PT2H20M",
+                "stopAirports": [],
+                "stopCount": 0,
+                "addDay": 0,
+                "freeBaggage": {
+                  "unit": "WEIGHT_KG",
+                  "allowance": 15
+                },
+                "cabin": "ECONOMY",
+                "legs": [
+                  {
+                    "marketingCarrier": "LJ",
+                    "flightNumber": "0172",
+                    "departure": {
+                      "airport": {
+                        "code": "TPE",
+                        "name": "타이완 타오위안 국제공항",
+                        "cityName": "타이베이",
+                        "cityCode": "TPE"
+                      },
+                      "at": "2026-11-24T12:40:00",
+                      "terminal": "1"
+                    },
+                    "arrival": {
+                      "airport": {
+                        "code": "ICN",
+                        "name": "인천국제공항",
+                        "cityName": "서울",
+                        "cityCode": "SEL"
+                      },
+                      "at": "2026-11-24T16:00:00",
+                      "terminal": "2"
+                    },
+                    "flightTime": "PT2H20M",
+                    "isTechnicalStop": false,
+                    "addDay": 0,
+                    "freeBaggage": {
+                      "unit": "WEIGHT_KG",
+                      "allowance": 15
+                    }
+                  }
+                ]
+              }
+            ],
+            "fares": [
+              {
+                "promotionCardCode": "IBK",
+                "price": 525700
+              },
+              {
+                "promotionCardCode": "NH",
+                "price": 525700
+              },
+              {
+                "promotionCardCode": "LOTTE",
+                "price": 526700
+              },
+              {
+                "promotionCardCode": "SAMSUNG",
+                "price": 526700
+              },
+              {
+                "promotionCardCode": "HYUNDAI",
+                "price": 527700
+              },
+              {
+                "promotionCardCode": "KB",
+                "price": 529600
+              },
+              {
+                "promotionCardCode": "SAMSUNG_ID_GLOBAL",
+                "price": 533100
+              },
+              {
+                "promotionCardCode": "WOORI",
+                "price": 550900
+              },
+              {
+                "promotionCardCode": "BC",
+                "price": 557300
+              },
+              {
+                "promotionCardCode": "HANA",
+                "price": 557300
+              },
+              {
+                "promotionCardCode": "SHINHAN",
+                "price": 557300
+              },
+              {
+                "price": 557300
+              }
+            ],
+            "tags": [],
+            "seatCount": 9,
+            "price": 525700
+          }
+        ],
+        "cursor": {
+          "hasNext": true,
+          "nextCursor": "335",
+          "size": 20
+        }
+      }
+    }
+  }
+}
