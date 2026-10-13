@@ -11,8 +11,8 @@ Next.js 서버 포함 프로젝트입니다. 데이터·계정·사용자 로그
 
 1. [supabase.com](https://supabase.com)에서 새 프로젝트 생성 (리전: **Northeast Asia (Seoul)** 권장, Vercel `icn1`과 맞춤)
 2. **SQL Editor**에서 `supabase/migrations/`의 SQL 파일을 **이름 순서대로** 하나씩 붙여 넣고 실행
-   - `20261013000000_office_init.sql` → `20261013010000_open_signup.sql`
-   - 첫 번째 파일을 이미 실행했다면 두 번째만 실행하면 됩니다
+   - `20261013000000_office_init.sql` → `20261013010000_open_signup.sql` → `20261013020000_password_reset_usage.sql`
+   - 이미 실행한 파일은 건너뛰고 그다음 파일부터 실행하면 됩니다
    - Supabase CLI를 쓰면 `supabase link` 후 `supabase db push`
 3. **Authentication > Sign In / Providers**
    - Email 공급자는 켜 둡니다 (로그인 검증에 사용)
@@ -68,7 +68,8 @@ update office_users set role = 'admin' where email = 'me@example.com';
 - 같은 IP에서 1시간에 10건 넘게 가입하면 잠시 막습니다. 로그인은 같은 이메일로 10분 안에 5번 틀리면 10분 잠깁니다
 - **서버 AI 키(`OPENAI_API_KEY` 등)는 관리자만 씁니다.** 일반 사용자는 화면의 `+ API 키 추가`로 자기 키를 등록해야 AI 기능을 쓸 수 있어, 내 키로 다른 사람 비용이 나가지 않습니다
 - Supabase 대시보드 **Authentication > Users**에서 직접 만든 계정도 첫 로그인 때 일반 사용자로 등록됩니다
-- 비밀번호 재설정은 Supabase 대시보드 **Authentication > Users > ⋯ > Reset password / Update user**에서 합니다
+- 비밀번호는 Supabase Auth에 해시로만 저장되어 관리자도 볼 수 없습니다. 잊은 사용자는 `/admin`의 **비밀번호 재설정**으로 임시 비밀번호를 발급하고, 사용자는 다음 로그인 때 새 비밀번호를 정합니다
+- 사용자는 왼쪽 메뉴의 열쇠 아이콘으로 직접 비밀번호를 바꿀 수 있습니다
 - 계정 삭제: Authentication > Users에서 삭제하면 `office_users` 행도 함께 삭제됩니다 (로그는 남음)
 
 ## 사용자 로그 (`user_logs`)
@@ -80,6 +81,8 @@ update office_users set role = 'admin' where email = 'me@example.com';
 | `login_blocked` | 차단된 계정(`blocked`), 10분 내 5회 실패 잠금(`too_many_attempts`) — `detail.reason` |
 | `logout` | 로그아웃 |
 | `admin_review` | 관리자의 차단·차단 해제·권한 변경 (`detail`에 대상·결과) |
+| `admin_password_reset` | 관리자의 임시 비밀번호 발급 (`detail`에 대상. 비밀번호는 기록하지 않음) |
+| `password_changed`, `password_change_failed` | 사용자의 비밀번호 변경 성공(`detail.forced`: 임시 비밀번호에서 변경) / 지금 비밀번호 불일치 |
 | `api` | 로그인 사용자의 변경 요청(POST/DELETE)과 서버 오류. 자동 폴링·조회(GET)는 제외 |
 
 각 행에는 시각, 사용자 ID·이메일, IP, User-Agent가 함께 남습니다. 요청 본문·비밀번호·API 키는 기록하지 않습니다.
@@ -89,6 +92,23 @@ update office_users set role = 'admin' where email = 'me@example.com';
 select created_at, email, event, action, status, ip from user_logs order by id desc limit 100;
 ```
 
+## 기능별 사용량 (`feature_usage`)
+
+사용자, 기능, 날짜(한국시간)별로 한 행씩 쌓입니다. `/admin`의 **기능 사용** 탭에서 기간별로 봅니다.
+
+| 칸 | 뜻 |
+| --- | --- |
+| `visits` | 업무실 화면을 연 횟수 (나의 오피스, 분석실, 투자실 등) |
+| `actions` | 그 기능에서 직접 실행한 작업 수 (랭킹 조회 시작, 종목 저장, 뉴스 가져오기, 항공권 검색 등). 자동 진행과 폴링은 세지 않음 |
+
+입력 내용은 저장하지 않고 횟수만 셉니다. 계정을 삭제하면 사용량도 함께 삭제됩니다. 예:
+
+```sql
+select u.email, f.feature, sum(f.visits) visits, sum(f.actions) actions
+from feature_usage f join office_users u on u.id = f.user_id
+where f.day > current_date - 30 group by 1, 2 order by 3 desc;
+```
+
 ## GitHub 공개 저장소 규칙
 
 코드만 GitHub에 올리고, 사람·키 정보는 올리지 않습니다.
@@ -96,7 +116,7 @@ select created_at, email, event, action, status, ip from user_logs order by id d
 | 어디에 | 무엇을 |
 | --- | --- |
 | GitHub | 코드, 빈 테이블 구조(`supabase/migrations`), 값이 빈 `.env.example` |
-| Supabase | 회원·차단 상태(`office_users`), 사용자 로그(`user_logs`), 오피스 데이터 |
+| Supabase | 회원·차단 상태(`office_users`), 사용자 로그(`user_logs`), 기능별 사용량(`feature_usage`), 오피스 데이터 |
 | Vercel 환경변수 / `.env.local` | DB 주소, service role 키, 암호화 키, `ADMIN_EMAILS` |
 
 - `.gitignore`가 `.env*`, `legacy/`, Supabase 시드, 백업·CSV·덤프를 제외합니다

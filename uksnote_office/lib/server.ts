@@ -6,9 +6,9 @@ export async function sha(s:string){return Array.from(new Uint8Array(await crypt
 export function response(data:unknown,status=200,headers:Record<string,string>={}){return Response.json(data,{status,headers:{'Cache-Control':'no-store',...headers}});}
 export function sameOrigin(r:Request){const o=r.headers.get('origin');if(o&&o!==new URL(r.url).origin)throw new Error('ORIGIN');}
 export function sessionToken(r:Request){const header=r.headers.get('authorization')?.match(/^Bearer ([^\s]+)$/i)?.[1];const token=header??(r.headers.get('cookie')||'').match(/(?:^|;\s*)hi_session=([^;]+)/)?.[1];return token&&token.length<=256?token:null;}
-export type OfficeUser={id:string,email:string,name:string,role:'user'|'admin'};
+export type OfficeUser={id:string,email:string,name:string,role:'user'|'admin',mustChangePassword?:boolean};
 /** 세션 토큰 → Supabase 사용자. 관리자가 차단한 계정은 기존 세션도 즉시 거부된다. */
-export async function currentUser(r:Request):Promise<OfficeUser>{const token=sessionToken(r);if(!token)throw new Error('AUTH');const found=await db().prepare("SELECT u.id::text AS id,u.email,u.name,u.role FROM sessions s JOIN office_users u ON u.id::text=s.owner WHERE s.token=? AND s.expires>? AND u.status<>'rejected'").bind(await sha(token),Date.now()).first<OfficeUser>();if(!found)throw new Error('AUTH');return found;}
+export async function currentUser(r:Request):Promise<OfficeUser>{const token=sessionToken(r);if(!token)throw new Error('AUTH');const found=await db().prepare("SELECT u.id::text AS id,u.email,u.name,u.role,u.must_change_password AS \"mustChangePassword\" FROM sessions s JOIN office_users u ON u.id::text=s.owner WHERE s.token=? AND s.expires>? AND u.status<>'rejected'").bind(await sha(token),Date.now()).first<OfficeUser>();if(!found)throw new Error('AUTH');return found;}
 export async function authorized(r:Request){return (await currentUser(r)).id;}
 
 async function key(){const s=setting('OFFICE_ENCRYPTION_KEY');if(!s)throw new Error('연결 설정 암호화 준비가 필요합니다.');return crypto.subtle.importKey('raw',Uint8Array.from(atob(s),x=>x.charCodeAt(0)),'AES-GCM',false,['encrypt','decrypt']);}

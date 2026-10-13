@@ -1,8 +1,8 @@
-import { db, sha, setting, type OfficeUser } from './server';
-import { createAuthUser, verifyPassword } from './supabase-auth';
+import { db, sha, setting, sessionToken, type OfficeUser } from './server';
+import { createAuthUser, verifyPassword, setAuthPassword } from './supabase-auth';
 import { clientInfo, logEvent } from './user-logs';
 /** 가입하면 바로 이용. 관리자는 문제 계정만 차단한다.
- * 비밀번호는 Supabase Auth가 보관하고, 차단 여부는 office_users.status('approved' 이용 중 / 'rejected' 차단)로 판단한다.
+ * 비밀번호는 Supabase Auth가 해시로 보관하고(원문 조회 불가), 차단 여부는 office_users.status('approved' 이용 중 / 'rejected' 차단)로 판단한다.
  */
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -43,21 +43,29 @@ export async function signup(r: Request, b: any) {
   return { ok: true };
 }
 
+const FAIL_LIMIT = 5, FAIL_WINDOW_MS = 600000;
+async function tooManyFailures(key: string, now: number) {
+  const a = await db().prepare('SELECT count,until FROM attempts WHERE owner=?').bind(key).first<{ count: number; until: number }>();
+  return !!a && a.until > now && a.count >= FAIL_LIMIT;
+}
+async function recordFailure(key: string, now: number) {
+  await db().prepare('INSERT INTO attempts(owner,count,until) VALUES(?,1,?) ON CONFLICT(owner) DO UPDATE SET count=CASE WHEN attempts.until>? THEN attempts.count+1 ELSE 1 END,until=CASE WHEN attempts.until>? THEN attempts.until ELSE excluded.until END')
+    .bind(key, now + FAIL_WINDOW_MS, now, now).run();
+}
+
 type LoginResult = { token: string } | { error: string; status: number };
 export async function login(r: Request, b: any): Promise<LoginResult> {
   const email = normalizeEmail(b?.email), password = b?.password;
   const invalid = { error: '이메일 또는 비밀번호를 확인해 주세요.', status: 401 };
   if (!EMAIL.test(email) || typeof password !== 'string' || !password || password.length > 256) return invalid;
   const key = 'email:' + await sha(email), now = Date.now();
-  const a = await db().prepare('SELECT count,until FROM attempts WHERE owner=?').bind(key).first<{ count: number; until: number }>();
-  if (a && a.until > now && a.count >= 5) {
+  if (await tooManyFailures(key, now)) {
     await logEvent(r, { email, event: 'login_blocked', detail: { reason: 'too_many_attempts' } });
     return { error: '로그인 시도가 많습니다. 10분 후 다시 시도해 주세요.', status: 429 };
   }
   const id = await verifyPassword(email, password);
   if (!id) {
-    await db().prepare('INSERT INTO attempts(owner,count,until) VALUES(?,1,?) ON CONFLICT(owner) DO UPDATE SET count=CASE WHEN attempts.until>? THEN attempts.count+1 ELSE 1 END,until=CASE WHEN attempts.until>? THEN attempts.until ELSE excluded.until END')
-      .bind(key, now + 600000, now, now).run();
+    await recordFailure(key, now);
     await logEvent(r, { email, event: 'login_failed' });
     return invalid;
   }
@@ -78,7 +86,7 @@ export async function login(r: Request, b: any): Promise<LoginResult> {
 }
 
 export async function listUsers() {
-  const rows = await db().prepare("SELECT id::text AS id,email,name,note,status,role,created_at,reviewed_at,last_login_at FROM office_users ORDER BY created_at DESC").all();
+  const rows = await db().prepare("SELECT id::text AS id,email,name,note,status,role,must_change_password,created_at,reviewed_at,last_login_at FROM office_users ORDER BY created_at DESC").all();
   return { users: rows.results };
 }
 
@@ -95,6 +103,51 @@ export async function reviewUser(r: Request, admin: OfficeUser, b: any) {
   // 차단 즉시 기존 로그인도 끊는다.
   if (b.status === 'rejected') await db().prepare('DELETE FROM sessions WHERE owner=?').bind(id).run();
   await logEvent(r, { userId: admin.id, email: admin.email, event: 'admin_review', detail: { target: id, targetEmail: target.email, status: b.status, role } });
+  return { ok: true };
+}
+
+// 헷갈리는 글자(0/O, 1/l/I)를 뺀 임시 비밀번호. 예: Xk7m-Pq3r-Tz9w
+const TEMP_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789';
+function tempPassword() {
+  const out: string[] = [];
+  while (out.length < 12) for (const b of crypto.getRandomValues(new Uint8Array(16))) if (b < TEMP_CHARS.length * 4 && out.length < 12) out.push(TEMP_CHARS[b % TEMP_CHARS.length]);
+  return [out.slice(0, 4), out.slice(4, 8), out.slice(8)].map(p => p.join('')).join('-');
+}
+
+/** 관리자가 임시 비밀번호를 만들어 준다. 기존 로그인은 끊기고, 다음 로그인 때 새 비밀번호로 바꿔야 한다.
+ * 임시 비밀번호는 이 응답으로 한 번만 관리자에게 보여 주고 어디에도 저장하지 않는다. */
+export async function resetPassword(r: Request, admin: OfficeUser, b: any) {
+  const id = typeof b?.id === 'string' ? b.id : '';
+  if (!UUID.test(id)) throw new Error('사용자를 확인해 주세요.');
+  if (id === admin.id) throw new Error('본인 비밀번호는 여기서 바꿀 수 없습니다.');
+  const target = await db().prepare('SELECT email FROM office_users WHERE id=?::uuid').bind(id).first<{ email: string }>();
+  if (!target) throw new Error('사용자를 찾을 수 없습니다.');
+  const password = tempPassword();
+  await setAuthPassword(id, password);
+  await db().prepare('UPDATE office_users SET must_change_password=true WHERE id=?::uuid').bind(id).run();
+  await db().prepare('DELETE FROM sessions WHERE owner=?').bind(id).run();
+  await db().prepare('DELETE FROM attempts WHERE owner=?').bind('email:' + await sha(target.email)).run();
+  await logEvent(r, { userId: admin.id, email: admin.email, event: 'admin_password_reset', detail: { target: id, targetEmail: target.email } });
+  return { ok: true, tempPassword: password };
+}
+
+/** 본인 비밀번호 변경. 임시 비밀번호를 받은 사용자는 이걸 마쳐야 오피스를 쓸 수 있다. */
+export async function changePassword(r: Request, user: OfficeUser, b: any) {
+  const current = b?.current, next = b?.next, now = Date.now(), key = 'email:' + await sha(user.email);
+  if (typeof next !== 'string' || next.length < 8 || next.length > 72) throw new Error('새 비밀번호는 8~72자로 입력해 주세요.');
+  if (typeof current !== 'string' || !current || current.length > 256) throw new Error('지금 비밀번호를 입력해 주세요.');
+  if (next === current) throw new Error('지금 비밀번호와 다른 비밀번호를 입력해 주세요.');
+  if (await tooManyFailures(key, now)) throw new Error('비밀번호 확인 시도가 많습니다. 10분 후 다시 시도해 주세요.');
+  if (await verifyPassword(user.email, current) !== user.id) {
+    await recordFailure(key, now);
+    await logEvent(r, { userId: user.id, email: user.email, event: 'password_change_failed' });
+    throw new Error('지금 비밀번호가 맞지 않습니다.');
+  }
+  await setAuthPassword(user.id, next);
+  await db().prepare('UPDATE office_users SET must_change_password=false WHERE id=?::uuid').bind(user.id).run();
+  // 지금 쓰는 로그인만 남기고 다른 기기의 로그인은 끊는다.
+  await db().prepare('DELETE FROM sessions WHERE owner=? AND token<>?').bind(user.id, await sha(sessionToken(r) || '')).run();
+  await logEvent(r, { userId: user.id, email: user.email, event: 'password_changed', detail: { forced: !!user.mustChangePassword } });
   return { ok: true };
 }
 

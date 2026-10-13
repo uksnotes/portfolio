@@ -30,9 +30,9 @@
 ## 배포 구조
 
 - **Vercel**: Next.js 앱 배포 (Root Directory `uksnote_office`)
-- **Supabase Postgres**: 오피스 데이터, 회원·차단 상태(`office_users`), 사용자 로그(`user_logs`)
+- **Supabase Postgres**: 오피스 데이터, 회원·차단 상태(`office_users`), 사용자 로그(`user_logs`), 기능별 사용량(`feature_usage`)
 - **Supabase Auth**: 이메일·비밀번호
-- **공개 가입**: 가입하면 바로 이용. 관리자는 `/admin`에서 로그 확인·문제 계정 차단
+- **공개 가입**: 가입하면 바로 이용. 관리자는 `/admin`에서 로그 확인, 문제 계정 차단, 임시 비밀번호 발급, 기능별 사용량 확인
 - **서버 AI 키는 관리자 전용**: 다른 사용자는 각자 API 키를 등록해서 사용
 
 설정 방법은 `docs/SETUP.md`를 보세요.

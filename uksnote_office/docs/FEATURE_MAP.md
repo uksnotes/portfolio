@@ -15,6 +15,6 @@
 | 주식·차트·랭킹 | `app/stock-analysis.tsx`, `app/kospi-ranking.tsx` | `lib/analysis.ts`, `lib/market-history.ts`, `lib/kospi-ranking.ts` |
 | 뉴스 수집·요약 | `app/office.tsx` | `lib/providers.ts`, `lib/news-summary.ts` |
 | 로그인·가입·데이터 저장 | `app/office.tsx`, `app/api/[action]/route.ts` | `lib/accounts.ts`, `lib/ai-keys.ts`(서버 AI 키 관리자 전용), `lib/server.ts`, `lib/db.ts`, `lib/supabase-auth.ts` |
-| 사용자 차단·로그 | `app/admin/admin-console.tsx` | `lib/accounts.ts`, `lib/user-logs.ts`, `supabase/migrations/` |
+| 사용자 차단·로그·비밀번호 재설정·기능 사용량 | `app/admin/admin-console.tsx` | `lib/accounts.ts`, `lib/user-logs.ts`, `lib/usage.ts`, `supabase/migrations/` |
 
 모양만 바꾸려면 `app/`와 `app/globals.css`, 계산·검색 규칙을 바꾸려면 `lib/`를 먼저 확인하세요.
