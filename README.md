@@ -12,23 +12,29 @@
 
 ## Projects
 
-### 1. HI OFFICE — 3D 개인 업무 오피스
+### 1. UK'S OFFICE — 3D 개인 업무 오피스
 
-> 투자 분석·뉴스·일정·AI 팀을 하나로 묶은 로컬 3D 워크스페이스
+> 투자 분석·뉴스·일정·여행·부동산·AI 팀을 하나로 묶은 3D 웹 워크스페이스 (Vercel + Supabase 배포)
 
-3D 오피스 공간에서 캐릭터를 움직여 각 업무실로 들어가는 개인 업무 대시보드입니다. 주식 분석, 뉴스 확인, 일정 관리, AI 리서치, 부동산 조사처럼 매일 반복하는 업무를 한 화면에서 처리할 수 있도록 구성했습니다.
+3D 오피스 공간에서 캐릭터를 움직여 각 업무실로 들어가는 개인 업무 대시보드입니다. 주식 분석, 뉴스 확인, 일정 관리, 여행 계획, 부동산 조사, AI 리서치처럼 매일 반복하는 업무를 한 화면에서 처리할 수 있도록 구성했습니다. 이메일로 가입하면 바로 자기 오피스를 쓸 수 있는 웹 서비스로 배포했습니다.
 
 **주요 기능:**
 - **코스피200 단기 매매 후보 랭킹**: 코스피200 전 종목의 일봉 데이터를 수집해 추세(30%)·모멘텀(25%)·거래량(20%)·가격 위치(15%)·변동성(10%) 5개 팩터로 단기 점수를 산출하고 순위를 매깁니다. 종목별 5일 수익률, RSI, 거래량 배수와 함께 "매수 조건 관찰 / 과열·추격 보류 / 추세 회복 대기" 같은 상태를 표시합니다.
 - **5년 인터랙티브 차트**: 랭킹에서 종목을 클릭하면 확대·축소가 가능한 5년 캔들 차트와 단기 지표를 보여주고, 매수 후보 구간·손절선·매도 목표 가격을 조건부 시나리오로 제시합니다.
-- **보유 종목 분석**: 보유·관심종목을 등록(CSV 업로드 지원)하면 현재가를 조회하고, 종목별 점수·가중치와 1년/5년 시세 흐름을 함께 확인할 수 있습니다.
+- **보유 종목 분석**: 보유·관심종목을 등록하면 현재가를 조회해 평가금액·평가손익을 계산하고, 종목별 단기 점수와 1년/5년 시세 흐름을 함께 확인합니다.
 - **뉴스 수집·핵심 요약**: 경제·사회·IT·세계·랭킹 5개 분야의 주요 기사를 최대 10건씩 가져와 본문에서 핵심 1~2문장과 주요 키워드를 자동으로 추립니다.
 - **월간 일정·TO-DO**: 월간 캘린더에 일정을 등록하고, 오늘의 할 일을 추가·완료 처리하며 진행 현황을 메인 화면에서 바로 확인합니다.
-- **역할별 AI 분석가 팀**: 업무를 지시하면 비서실장(업무 설계) → 리서치 분석가(자료 조사·웹 검색) → 데이터 분석가(수치 분석) → 검증 담당자(근거 검토) → 보고서 담당자(최종 보고) 순으로 5명의 AI가 단계별로 작업해 보고서를 만듭니다. GPT / Claude 모델을 선택할 수 있고, 저장된 보유 종목·시세·뉴스를 함께 분석에 활용합니다.
-- **아파트 실거래·매물 비교**: 아파트 단지를 검색해 실거래가와 현재 매물을 비교하고, 로얄동·로얄층 후보를 정리합니다.
+- **역할별 AI 분석가 팀**: 업무를 지시하면 비서실장(업무 설계) → 리서치 분석가(자료 조사·웹 검색) → 데이터 분석가(수치 분석) → 검증 담당자(근거 검토) → 보고서 담당자(최종 보고) 순으로 5명의 AI가 단계별로 작업해 보고서를 만듭니다. 저장된 보유 종목·시세·뉴스를 함께 분석에 활용합니다.
+- **여행 플래너**: Kiwi.com 실시간 운임으로 직항 왕복 최저가 TOP 3를 찾고, 한 항공사 왕복과 서로 다른 항공사 편도 2장 조합을 가격순으로 비교합니다. AI가 관광 명소·맛집·도보 동선을 묶은 날짜별 일정표와 지도를 만듭니다.
+- **아파트 실거래·매물 비교**: 단지를 검색해 59㎡·84㎡ 실거래와 중개사 매물 TOP 3를 비교하고, 검색 근거로 로얄동 후보를 정리합니다.
+- **공통 AI 키 관리**: ChatGPT·Claude·Gemini API 키를 계정별로 암호화(AES-GCM) 저장하고, 등록한 서비스만 골라 사용합니다.
+- **회원·관리자**: 이메일 가입 즉시 이용, 관리자 화면에서 사용자 로그(가입·로그인·실패·요청) 확인과 문제 계정 차단. 서버 AI 키는 관리자만 쓰고 다른 사용자는 각자 키를 등록합니다.
+
+**Tech Stack:** `Next.js` `React` `TypeScript` `Three.js` `Lightweight Charts` `Leaflet` `Supabase (Postgres·Auth)` `Vercel` `OpenAI / Claude / Gemini API`
 
 ```
-3D 오피스 → 업무실 선택 → [분석실 | 투자실 | 뉴스룸 | 일정 보드 | AI 팀 오피스 | 부동산 리서치]
+3D 오피스 → 업무실 선택 → [분석실 | 투자실 | 뉴스룸 | 일정 보드 | AI 팀 오피스 | 여행 | 부동산 리서치]
+브라우저 → Vercel (Next.js API) → Supabase (데이터·회원·사용자 로그 / 인증)
 ```
 
 <details open>
@@ -38,9 +44,17 @@
 |:---:|:---:|
 | ![Office](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example1.png) | ![AITeam](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example2.png) |
 
-| 코스피200 랭킹 | 뉴스룸 |
+| 코스피200 랭킹 | 5년 인터랙티브 차트 |
 |:---:|:---:|
-| ![Ranking](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example3.png) | ![News](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example4.png) |
+| ![Ranking](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example3.png) | ![Chart](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example4.png) |
+
+| 투자실 | 뉴스룸 |
+|:---:|:---:|
+| ![Portfolio](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example5.png) | ![News](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example6.png) |
+
+| 여행 · 항공권 비교 | 부동산 리서치 |
+|:---:|:---:|
+| ![Travel](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example7.png) | ![RealEstate](https://github.com/uksnotes/portfolio/raw/main/uksnote_office/examples/example8.png) |
 
 </details>
 

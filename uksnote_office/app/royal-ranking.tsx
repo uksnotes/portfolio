@@ -1,0 +1,15 @@
+'use client';
+import SearchAttribution from './search-attribution';
+import {Button} from '@/components/ui/button';
+import {useResearch} from './use-research';
+import {brokerFallback,royalSearchLinks} from '@/lib/royal-search';
+const money=(n:number)=>(n/10000).toLocaleString('ko-KR',{maximumFractionDigits:3})+'억원';
+export default function RoyalRanking({data,area,items}:{data:any;area:string;items:any[]}){
+ const r=useResearch('royal',data.apt.id),job=r.jobs[0],ranked=(job?.status==='complete'?job.result?.ranked||[]:[]).filter((x:any)=>area==='all'||x.area===area||x.area==='all').slice(0,3),links=royalSearchLinks(data.apt);
+ return <div className="royal-ranking"><div className="card-head"><div><h3>검색 근거로 보는 로얄동 순위</h3><p className="footnote">서로 다른 작성자·사이트의 로얄동 근거 수 순 · 동률은 동 번호 순 · 면적 미구분 근거는 별도 표시</p></div><Button variant="outline" disabled={r.busy||job?.status==='running'||job?.status==='starting'} onClick={()=>r.start({type:'royal',aptId:data.apt.id})}>{r.busy||job?.status==='running'||job?.status==='starting'?'검색·근거 확인 중…':'로얄동 검색 · 순위'}</Button></div>
+ <div className="travel-links"><a href={links.naver} target="_blank" rel="noreferrer">네이버 검색 ↗</a><a href={links.google} target="_blank" rel="noreferrer">구글 검색 ↗</a></div><p className="footnote">공통 설정에서 선택한 AI로 검색 근거를 정리합니다. 검색 발췌·블로그 의견은 현장 검증 결과가 아닙니다.</p>
+ {(r.error||job?.error)&&<p className="estate-notice">{r.error||job.error}</p>}{!r.polling&&<Button variant="outline" onClick={r.resume}>결과 조회 재개</Button>}
+ <SearchAttribution job={job}/>{ranked.length?<div className="travel-card-grid">{ranked.map((x:any,i:number)=><article className="travel-result-card" key={x.building+':'+x.area}><span className="travel-rank">{i+1}위</span><h3>{x.building}동 <small>{x.area==='all'?'면적 미구분':x.area+'㎡'}</small></h3><span className="tag">{x.confidence} · {x.evidence.length}개 작성자/사이트</span>{x.evidence.slice(0,2).map((e:any,j:number)=><div key={j}><p>{e.reason}</p><small>“{e.quote}”</small><a className="provider-link" href={e.sourceUrl} target="_blank" rel="noreferrer">{e.sourceTitle||'검색 근거'} ↗</a></div>)}</article>)}</div>:<><p className="muted">{job?.status==='complete'?'동 번호와 로얄동 근거를 함께 확인하지 못했습니다.':'검색 순위가 아직 없습니다.'} 중개사 매물 1~3위를 먼저 확인하세요.</p>{brokerFallback(items,area).map(g=><div key={g.area}><h4>{g.area}㎡ 매물 TOP 3</h4><p className="footnote">동일 면적대 전용 ㎡당 호가 낮은 순 · 동률은 최근 확인 순 · 로얄동 순위와는 별개</p><div className="travel-card-grid">{g.items.map((x:any,i:number)=><article className="travel-result-card" key={x.id}><span className="travel-rank">{i+1}위</span><h3>{x.building} · {x.floor}층</h3><strong>{money(x.price)}</strong><p>전용 {x.area}㎡ · {x.broker}</p><p>{x.description}</p><a className="provider-link" href={x.sourceUrl} target="_blank" rel="noreferrer">{x.source} 매물 ↗</a></article>)}</div>{!g.items.length&&<p className="muted">추천할 중개사 매물 없음</p>}</div>)}</>}
+ {job?.result?.searchErrors?.length>0&&<p className="footnote">{job.result.searchErrors.join(' · ')} · 읽을 수 있는 검색 자료만 반영했습니다.</p>}{job?.completedAt&&<small className="muted">검색 {new Date(job.completedAt).toLocaleString('ko-KR')}</small>}
+ </div>;
+}

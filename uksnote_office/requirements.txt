@@ -1,2 +1,0 @@
-# Python 3.10+ 표준 라이브러리만 사용: pip install 불필요
-# 별도 실행 환경: Node.js 22.13+ (nodejs.org)

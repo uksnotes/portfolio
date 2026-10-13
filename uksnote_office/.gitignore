@@ -1,6 +1,64 @@
-node_modules/
-data/*
-!data/README.md
-__pycache__/
-*.pyc
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/.vinext/
+/out/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
 .env*
+
+# vercel
+.vercel
+
+# typescript
+next-env.d.ts
+/dist/
+/.wrangler/
+# Checkout-local execution profile and tool state; never publish them.
+/.sites-runtime/
+/.agents/
+/.codex/
+/outputs/
+/work/
+
+!.env.example
+
+# 상위 portfolio/.gitignore의 *.json 제외를 이 프로젝트에서는 해제 (airports-catalog.json, vercel.json 등은 빌드·배포에 필요)
+!*.json
+
+# 공개 저장소: 회원·로그·키는 Supabase / Vercel 환경변수에만 둔다 (scripts/check-secrets.mjs가 커밋 전 재검사)
+/legacy/
+/supabase/seed*.sql
+/supabase/.temp/
+/supabase/.branches/
+/backups/
+/exports/
+*.csv
+*.dump
+*.sqlite
+*.sqlite3
+*.key

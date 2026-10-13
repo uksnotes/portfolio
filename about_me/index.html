@@ -18,6 +18,11 @@
     .project-card p { margin: 0.3rem 0; font-size: 0.95rem; color: #555; }
     .tech-tags { margin-top: 0.5rem; }
     .tech-tags .tag { font-size: 0.8rem; background: #e8f4fd; color: #0077cc; }
+    .shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 0.8rem; }
+    .shots figure { margin: 0; }
+    .shots img { width: 100%; height: auto; display: block; border: 1px solid #e5e5e5; border-radius: 6px; }
+    .shots figcaption { font-size: 0.8rem; color: #777; text-align: center; margin-top: 4px; }
+    @media (max-width: 560px) { .shots { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -70,11 +75,24 @@
 <h2>포트폴리오 프로젝트</h2>
 
 <div class="project-card">
-  <h3>HI OFFICE — 3D 개인 업무 오피스</h3>
-  <p>3D 오피스 공간에서 캐릭터를 움직여 각 업무실로 들어가는 개인 업무 대시보드. 코스피200 전 종목을 추세·모멘텀·거래량·가격 위치·변동성 5개 팩터로 점수화한 단기 매매 후보 랭킹과 5년 인터랙티브 차트, 분야별 뉴스 수집·핵심 요약, 월간 일정·TO-DO, 5명의 역할별 AI 분석가가 단계별로 보고서를 만드는 AI 팀(GPT / Claude), 아파트 실거래·매물 비교 기능을 제공합니다.</p>
+  <h3>UK'S OFFICE — 3D 개인 업무 오피스</h3>
+  <p>3D 오피스 공간에서 캐릭터를 움직여 각 업무실로 들어가는 개인 업무 대시보드. 코스피200 전 종목을 추세·모멘텀·거래량·가격 위치·변동성 5개 팩터로 점수화한 단기 매매 후보 랭킹과 5년 인터랙티브 차트, 보유 종목 평가손익, 분야별 뉴스 수집·핵심 요약, 월간 일정·TO-DO, 5명의 역할별 AI 분석가가 단계별로 보고서를 만드는 AI 팀(ChatGPT / Claude / Gemini)을 제공합니다.</p>
+  <p>여행 플래너는 Kiwi.com 실시간 운임으로 직항 왕복 최저가를 비교하고 관광 명소·맛집·도보 동선을 묶은 일정표를 만들며, 부동산 리서치는 59·84㎡ 실거래와 중개사 매물, 로얄동 후보를 비교합니다.</p>
+  <p>Vercel + Supabase로 배포한 웹 서비스로, 이메일 가입 즉시 이용할 수 있고 관리자 화면에서 사용자 로그 확인과 계정 차단을 합니다. API 키는 계정별로 암호화해 저장합니다.</p>
   <div class="tech-tags">
-    <span class="tag">코스피200 랭킹</span><span class="tag">인터랙티브 차트</span><span class="tag">뉴스 요약</span><span class="tag">일정 관리</span><span class="tag">AI 분석가 팀</span><span class="tag">부동산 리서치</span>
+    <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Three.js</span><span class="tag">Supabase</span><span class="tag">Vercel</span><span class="tag">코스피200 랭킹</span><span class="tag">AI 분석가 팀</span><span class="tag">여행 플래너</span><span class="tag">부동산 리서치</span>
   </div>
+  <div class="shots">
+    <figure><a href="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example1.png" target="_blank"><img src="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example1.png" alt="Office" loading="lazy"></a><figcaption>3D 오피스</figcaption></figure>
+    <figure><a href="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example2.png" target="_blank"><img src="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example2.png" alt="AI Team" loading="lazy"></a><figcaption>AI 팀 오피스</figcaption></figure>
+    <figure><a href="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example3.png" target="_blank"><img src="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example3.png" alt="Ranking" loading="lazy"></a><figcaption>코스피200 랭킹</figcaption></figure>
+    <figure><a href="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example4.png" target="_blank"><img src="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example4.png" alt="Chart" loading="lazy"></a><figcaption>5년 인터랙티브 차트</figcaption></figure>
+    <figure><a href="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example5.png" target="_blank"><img src="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example5.png" alt="Portfolio" loading="lazy"></a><figcaption>투자실</figcaption></figure>
+    <figure><a href="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example6.png" target="_blank"><img src="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example6.png" alt="News" loading="lazy"></a><figcaption>뉴스룸</figcaption></figure>
+    <figure><a href="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example7.png" target="_blank"><img src="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example7.png" alt="Travel" loading="lazy"></a><figcaption>여행 · 항공권 비교</figcaption></figure>
+    <figure><a href="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example8.png" target="_blank"><img src="https://raw.githubusercontent.com/uksnotes/portfolio/main/uksnote_office/examples/example8.png" alt="Real Estate" loading="lazy"></a><figcaption>부동산 리서치</figcaption></figure>
+  </div>
+  <p><a href="https://github.com/uksnotes/portfolio/tree/main/uksnote_office" target="_blank">코드 보기</a></p>
 </div>
 
 <div class="project-card">
