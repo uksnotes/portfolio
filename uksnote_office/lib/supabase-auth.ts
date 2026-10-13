@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 /** Supabase Auth는 이메일·비밀번호 보관과 검증만 맡는다.
- * 오피스 입장 가능 여부(관리자 승인)는 office_users.status로 따로 판단한다.
+ * 차단 여부는 office_users.status로 따로 판단한다.
  * 서버 전용: service role 키는 브라우저로 보내지 않는다.
  */
 function client() {
@@ -13,7 +13,7 @@ function client() {
 
 export type AuthUserResult = { id: string } | { exists: true };
 
-/** 이메일 확인 메일 없이 계정을 만든다. 입장은 관리자 승인으로 막는다. */
+/** 이메일 확인 메일 없이 계정을 만든다. */
 export async function createAuthUser(email: string, password: string, name: string): Promise<AuthUserResult> {
   const { data, error } = await client().auth.admin.createUser({ email, password, email_confirm: true, user_metadata: { name } });
   if (error) {
@@ -34,4 +34,15 @@ export async function verifyPassword(email: string, password: string): Promise<s
     throw new Error('인증 서버에 연결하지 못했습니다. 잠시 후 다시 시도해 주세요.');
   }
   return data.user?.id ?? null;
+}
+
+/** 관리자 재설정·본인 변경용. 이전 비밀번호는 알 수 없고 새 값으로 덮어쓴다. */
+export async function setAuthPassword(id: string, password: string) {
+  const { error } = await client().auth.admin.updateUserById(id, { password });
+  if (error) {
+    if (error.code === 'weak_password') throw new Error('비밀번호가 너무 단순합니다. 더 긴 비밀번호를 사용해 주세요.');
+    if (error.code === 'same_password') throw new Error('지금 비밀번호와 다른 비밀번호를 입력해 주세요.');
+    console.error('supabase updateUser failed', error.code, error.message);
+    throw new Error('비밀번호를 바꾸지 못했습니다. 잠시 후 다시 시도해 주세요.');
+  }
 }

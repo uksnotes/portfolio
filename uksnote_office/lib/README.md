@@ -3,7 +3,8 @@
 | 묶음 | 주요 파일 |
 | --- | --- |
 | 로그인·암호화·저장 | `server.ts`, `db.ts`(Supabase Postgres), `client-session.ts` |
-| 가입·차단·사용자 로그 | `accounts.ts`, `supabase-auth.ts`, `user-logs.ts` |
+| 가입·차단·사용자 로그·비밀번호 재설정 | `accounts.ts`, `supabase-auth.ts`, `user-logs.ts` |
+| 기능별 사용량 | `usage.ts` |
 | 공통 AI 선택·호출 | `ai-keys.ts`, `ai-provider.ts`, `ai-gateway.ts`, `sol.ts` |
 | AI 팀 작업 상태 | `ai-team.ts`, `team-jobs.ts` |
 | 여행·리서치 | `research-jobs.ts`, `travel-data.ts`, `travel-itinerary.ts`, `travel-route.ts` |
