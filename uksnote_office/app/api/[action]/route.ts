@@ -16,6 +16,8 @@ import {refreshMarketHistory} from '@/lib/market-history';
 import {teamList,createTeamJob,advanceTeamJob,retryTeamJob,decideTeamJob,answerTeamJob} from '@/lib/team-jobs';
 export const dynamic='force-dynamic';
 export const runtime='nodejs';
+// Claude·Gemini 웹 검색 리서치는 검색 메모와 JSON 정리를 합쳐 최대 270초가 걸린다.
+export const maxDuration=300;
 type Context={action:string,user:OfficeUser|null,recordKind?:string};
 async function handle(r:Request,ctx:Context){try{const action=ctx.action;if(r.method!=='GET')sameOrigin(r);
 if(action==='signup'&&r.method==='POST')return response(await signup(r,await r.json()));
