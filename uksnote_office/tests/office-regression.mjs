@@ -232,6 +232,12 @@ const isIntakeBody=b=>JSON.stringify(b).includes('"q1"');
  assert.deepEqual(reqs.map(r=>!!r.tools),[false,false,true,false,true,false]);assert.deepEqual(reqs.map(r=>r.max_output_tokens),[4200,4200,12000,4200,12000,4200]);
  const writerInput=JSON.parse(reqs[5].input);assert.equal(writerInput.brief.answers[0].answer,'선택 A1');assert.deepEqual(writerInput.previous_results.map(r=>r.role),['비서실장','리서치 분석가','검증 담당자']);
  assert.equal(JSON.parse(reqs[0].input).previous_results.length,0);
+ const asResult=v=>({status:'completed',output:[{type:'message',content:[{type:'output_text',text:JSON.stringify(v)}]}]}),base={title:'보고',summary:'요약',findings:[],uncertainties:[],recommendation:'추천',options:[],next_tasks:[]},tbl=(columns,rows)=>({title:'비교표',columns,rows});
+ assert.deepEqual(sol.responseResult(asResult({...base,table:tbl(['장소','이유'],[['A','B']])})).table,tbl(['장소','이유'],[['A','B']]));
+ assert.equal(sol.responseResult(asResult({...base,table:tbl(['a','b'],Array.from({length:9},(_,i)=>['r'+i,'x']))})).table.rows.length,8);
+ for(const bad of [tbl(['a'],[['x']]),tbl(['a','b','c','d','e','f'],[['1','2','3','4','5','6']]),tbl(['a','b'],[['x']]),tbl(['a','b'],[['x',3]])]){const r=sol.responseResult(asResult({...base,table:bad}));assert.equal(r.table,undefined);assert.equal(r.title,'보고');}
+ assert.equal(sol.responseResult(asResult(base)).table,undefined);
+ assert.ok(JSON.stringify(reqs[5].text.format.schema).includes('"table"'));assert.ok(!JSON.stringify(reqs[1].text.format.schema).includes('"table"'));assert.ok(reqs[5].instructions.includes('3페이지'));
  console.log('PASS: intake question parsing (exactly 5, 2~4 options), role-based requests, brief in inputs, search only for research/reviewer');}
 {const React=await import('react'),{renderToStaticMarkup}=await import('react-dom/server'),{default:TeamIntake,intakeAnswers,CUSTOM}=await import(path.join(out,'team-intake.mjs'));const sol=await import(path.join(out,'sol.mjs'));
  const intake=sol.intakeResult({status:'completed',output:[{type:'message',content:[{type:'output_text',text:JSON.stringify({...fakeIntake,investment:false,investment_reason:'여행 쇼핑 업무입니다.'})}]}]});

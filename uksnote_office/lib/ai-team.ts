@@ -23,6 +23,6 @@ export const DONE_STEPS:readonly string[]=['complete','skipped'];
 export function teamRole(id:string){return id===INTAKE_STEP.id?INTAKE_STEP:AI_TEAM.find(a=>a.id===id);}
 export const JOB_LABELS:Record<string,string>={running:'팀 작업 중',awaiting_answers:'대표 답변 대기',awaiting_decision:'결정 대기',approved:'승인됨',held:'보류',cancelled:'중단됨',error:'확인 필요'};
 export const STEP_LABELS:Record<string,string>={queued:'대기',skipped:'건너뜀',starting:'요청 중',running:'분석 중',complete:'완료',error:'확인 필요'};
-export type TeamResult={title:string;summary:string;findings:{point:string;evidence:string;source_ids:string[]}[];uncertainties:string[];recommendation:string;options:{label:string;benefit:string;tradeoff:string}[];next_tasks:string[]};
+export type TeamResult={title:string;summary:string;findings:{point:string;evidence:string;source_ids:string[]}[];uncertainties:string[];recommendation:string;options:{label:string;benefit:string;tradeoff:string}[];next_tasks:string[];table?:{title:string;columns:string[];rows:string[][]}};
 export type IntakeQuestion={question:string;why:string;options:string[]};
 export type IntakeResult={investment:boolean;investment_reason:string;questions:IntakeQuestion[]};
