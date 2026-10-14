@@ -2,6 +2,7 @@ import {providerConfig,submitTeamResponse,pollTeamResponse,cancelTeamResponse} f
 import {db,records,setting} from './server';
 import {AI_TEAM,TEAM_MODEL,SEARCH_ROLES,DONE_STEPS,teamModel} from './ai-team';
 import {responseResult,intakeResult,citedSources,aiFailureMessage} from './sol';
+import {RESEARCH_TIMEOUT,FINAL_TIMEOUT} from './ai-gateway';
 const now=()=>new Date().toISOString();
 // 답변을 기다리는 업무도 진행 중으로 본다. 계정당 하나만 진행할 수 있다.
 const ACTIVE="jsonb_extract_path_text(data::jsonb,'status') IN ('running','awaiting_answers')";
@@ -20,7 +21,7 @@ export async function createTeamJob(owner:string,b:any){const config=await provi
  const job={instruction,reference,context:{asOf:now(),holdings,news,sources},status:'running',model:selected.id,provider:selected.provider,createdAt:now(),includeOffice:b.includeOffice===true,steps:[{role:'intake',status:'queued',attempts:0},...teamSteps()],revision:0,archives:[],decisions:[],leaseUntil:0};
  const result=await db().prepare("INSERT INTO records(id,owner,kind,data,updated) SELECT ?,?,'ai-job',?,? WHERE NOT EXISTS (SELECT 1 FROM records WHERE owner=? AND kind='ai-job' AND "+ACTIVE+")").bind(id,owner,JSON.stringify(job),now(),owner).run();if(!result.meta.changes)throw new Error('진행 중인 팀 업무를 완료하거나 중단한 뒤 새 업무를 등록하세요.');return publicJob({...job,id,version:1});}
 export async function advanceTeamJob(owner:string,id:string){let job=await getJob(owner,id);if(job.status!=='running'||job.leaseUntil>Date.now())return publicJob(job);const index=job.steps.findIndex((s:any)=>!DONE_STEPS.includes(s.status));if(index<0)return publicJob(job);
- const token=crypto.randomUUID();job.leaseToken=token;job.leaseUntil=Date.now()+(job.provider==='anthropic'||job.provider==='google'?(SEARCH_ROLES.includes(job.steps[index].role)?200000:120000):45000);try{await persist(owner,job);}catch{return publicJob(await getJob(owner,id));}
+ const token=crypto.randomUUID();job.leaseToken=token;job.leaseUntil=Date.now()+(job.provider==='anthropic'||job.provider==='google'?(SEARCH_ROLES.includes(job.steps[index].role)?RESEARCH_TIMEOUT+FINAL_TIMEOUT+15000:120000):45000);try{await persist(owner,job);}catch{return publicJob(await getJob(owner,id));}
  const step=job.steps[index];try{
   if(step.status==='starting'&&!step.responseId)throw new Error('이전 AI 요청의 접수 여부가 불확실합니다. 자동으로 중복 요청하지 않습니다. 다시 실행하면 추가 사용량이 발생할 수 있습니다.');
   let response:any;
