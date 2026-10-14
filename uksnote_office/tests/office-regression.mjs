@@ -229,7 +229,7 @@ const isIntakeBody=b=>JSON.stringify(b).includes('"q1"');
  assert.equal(team.teamRole('intake').name,'사전 질문');assert.equal(team.JOB_LABELS.awaiting_answers,'대표 답변 대기');assert.equal(team.STEP_LABELS.skipped,'건너뜀');
  const steps=[{role:'intake',status:'complete',result:parsed},...team.AI_TEAM.map(a=>({role:a.id,status:a.id==='analyst'?'skipped':'complete',result:{title:a.id}}))];const job={model:'gpt-5.6-sol',instruction:'지시',reference:'',context:{},brief:{investment:false,answers:[{question:'질문 1?',answer:'선택 A1'}]},steps};
  const reqs=steps.map((_,i)=>sol.solRequest(job,i));assert.ok(isIntakeBody(reqs[0]));assert.ok(!isIntakeBody(reqs[1]));
- assert.deepEqual(reqs.map(r=>!!r.tools),[false,false,true,false,true,false]);
+ assert.deepEqual(reqs.map(r=>!!r.tools),[false,false,true,false,true,false]);assert.deepEqual(reqs.map(r=>r.max_output_tokens),[4200,4200,12000,4200,12000,4200]);
  const writerInput=JSON.parse(reqs[5].input);assert.equal(writerInput.brief.answers[0].answer,'선택 A1');assert.deepEqual(writerInput.previous_results.map(r=>r.role),['비서실장','리서치 분석가','검증 담당자']);
  assert.equal(JSON.parse(reqs[0].input).previous_results.length,0);
  console.log('PASS: intake question parsing (exactly 5, 2~4 options), role-based requests, brief in inputs, search only for research/reviewer');}
