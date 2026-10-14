@@ -218,6 +218,21 @@ const cachedSummary=await call('refresh-news',{category:'it'},categoryAuth);asse
 const durableSummary=(await call('state',undefined,categoryAuth)).data.records.find(r=>r.kind==='news-it').digest[0];assert.deepEqual(durableSummary.summaryPoints,savedSummary);assert.equal(durableSummary.summaryStatus,'cached');
 console.log('PASS: body-only concise summaries, decimal/negation preservation, caption/script/boilerplate exclusion, deduplication, missing-body state, refresh integration and durable cached summaries on article failure');
 
+// Intake: five decision questions before the chief plans; search only for research/reviewer.
+const fakeIntake={investment:true,investment_reason:'보유 종목 판단 업무입니다.',...Object.fromEntries([1,2,3,4,5].map(n=>['q'+n,{question:'질문 '+n+'?',why:'이유 '+n,options:['선택 A'+n,'선택 B'+n]}]))};
+const isIntakeBody=b=>JSON.stringify(b).includes('"q1"');
+{const sol=await import(path.join(out,'sol.mjs')),team=await import(path.join(out,'ai-team.mjs'));const asResponse=v=>({status:'completed',output:[{type:'message',content:[{type:'output_text',text:JSON.stringify(v)}]}]});
+ const parsed=sol.intakeResult(asResponse(fakeIntake));assert.equal(parsed.questions.length,5);assert.equal(parsed.investment,true);assert.deepEqual(parsed.questions[0].options,['선택 A1','선택 B1']);
+ assert.throws(()=>sol.intakeResult(asResponse({...fakeIntake,q3:{question:'질문',why:'',options:['하나뿐']}})),/질문을 만들지 못했습니다/);
+ assert.throws(()=>sol.intakeResult(asResponse({...fakeIntake,q5:{question:'질문',why:'',options:['a','b','c','d','e']}})),/질문을 만들지 못했습니다/);
+ assert.throws(()=>sol.intakeResult(asResponse({...fakeIntake,q2:{question:' ',why:'',options:['a','b']}})),/질문을 만들지 못했습니다/);
+ assert.equal(team.teamRole('intake').name,'사전 질문');assert.equal(team.JOB_LABELS.awaiting_answers,'대표 답변 대기');assert.equal(team.STEP_LABELS.skipped,'건너뜀');
+ const steps=[{role:'intake',status:'complete',result:parsed},...team.AI_TEAM.map(a=>({role:a.id,status:a.id==='analyst'?'skipped':'complete',result:{title:a.id}}))];const job={model:'gpt-5.6-sol',instruction:'지시',reference:'',context:{},brief:{investment:false,answers:[{question:'질문 1?',answer:'선택 A1'}]},steps};
+ const reqs=steps.map((_,i)=>sol.solRequest(job,i));assert.ok(isIntakeBody(reqs[0]));assert.ok(!isIntakeBody(reqs[1]));
+ assert.deepEqual(reqs.map(r=>!!r.tools),[false,false,true,false,true,false]);
+ const writerInput=JSON.parse(reqs[5].input);assert.equal(writerInput.brief.answers[0].answer,'선택 A1');assert.deepEqual(writerInput.previous_results.map(r=>r.role),['비서실장','리서치 분석가','검증 담당자']);
+ assert.equal(JSON.parse(reqs[0].input).previous_results.length,0);
+ console.log('PASS: intake question parsing (exactly 5, 2~4 options), role-based requests, brief in inputs, search only for research/reviewer');}
 // Team workflows: authenticated ownership, bounded model work, decisions and durable history.
 globalThis.__officeEnv.OPENAI_API_KEY='unit-test-key-not-a-real-secret';
 const teamLogin=await call('session',{username:'datascience_user1',password:'1234'},{owner:'team-owner'}),teamAuth={owner:'team-owner',token:teamLogin.data.sessionToken};
