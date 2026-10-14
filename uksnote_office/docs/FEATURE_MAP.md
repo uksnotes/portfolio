@@ -5,7 +5,7 @@
 | 이름·메뉴·홈 | `app/office.tsx`, `app/layout.tsx` | — |
 | 3D 공간·캐릭터 | `app/scene.tsx` | `lib/movement.ts` |
 | 공통 API 키 | `app/api-key-settings.tsx` | `lib/ai-keys.ts`, `lib/ai-provider.ts` |
-| AI 팀 업무 | `app/team-office.tsx` | `lib/team-jobs.ts`, `lib/sol.ts`, `lib/ai-gateway.ts` |
+| AI 팀 업무 | `app/team-office.tsx`, `app/team-intake.tsx`(사전 질문), `app/team-report.tsx`(보고서 표), `app/team-report-export.ts`(Word·PDF) | `lib/team-jobs.ts`(`team-answers` 포함), `lib/sol.ts`, `lib/ai-team.ts`, `lib/ai-provider.ts`, `lib/ai-gateway.ts` |
 | 여행 검색 조건 | `app/travel-office.tsx` | `lib/research-jobs.ts`, `lib/travel-data.ts` |
 | 일정표·맛집 탭 | `app/travel-itinerary-results.tsx` | `lib/travel-itinerary.ts` |
 | 1~5일차 표·맛집 리스트 | `app/travel-itinerary-overview.tsx` | `mode`로 두 화면 구분 |

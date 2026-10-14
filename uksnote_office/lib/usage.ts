@@ -6,7 +6,7 @@ export type Feature = typeof FEATURES[number];
 
 // 사용자가 직접 실행한 작업만 센다. 자동 진행·폴링(kospi-advance, team-advance, research-poll)과 단순 조회는 제외.
 const ACTION_FEATURE: Record<string, Feature> = {
-  'team-create': 'team', 'team-retry': 'team', 'team-decision': 'team',
+  'team-create': 'team', 'team-answers': 'team', 'team-retry': 'team', 'team-decision': 'team',
   'research-start': 'travel', 'research-itinerary-choice': 'travel', 'research-itinerary-location': 'travel',
   'apartment-search': 'apartments', 'apartment-read': 'apartments', 'apartment-refresh': 'apartments', 'apartment-manual': 'apartments', 'apartment-naver': 'apartments',
   'kospi-start': 'analysis', 'kospi-chart': 'analysis', 'chart-history': 'analysis', 'history': 'analysis',
