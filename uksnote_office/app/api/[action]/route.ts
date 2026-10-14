@@ -13,7 +13,7 @@ import {validWeights} from '@/lib/analysis';
 import {parseHistoryCSV} from '@/lib/history';
 import {cache} from '@/lib/server';
 import {refreshMarketHistory} from '@/lib/market-history';
-import {teamList,createTeamJob,advanceTeamJob,retryTeamJob,decideTeamJob} from '@/lib/team-jobs';
+import {teamList,createTeamJob,advanceTeamJob,retryTeamJob,decideTeamJob,answerTeamJob} from '@/lib/team-jobs';
 export const dynamic='force-dynamic';
 export const runtime='nodejs';
 type Context={action:string,user:OfficeUser|null,recordKind?:string};
@@ -42,6 +42,7 @@ if(action==='team-claude-key'&&r.method==='POST')return response(await saveClaud
 if(action==='team-list'&&r.method==='GET')return response(await teamList(owner));
 if(action==='team-create'&&r.method==='POST')return response(await createTeamJob(owner,await r.json()));
 if(action==='team-advance'&&r.method==='POST')return response(await advanceTeamJob(owner,(await r.json() as any).id));
+if(action==='team-answers'&&r.method==='POST')return response(await answerTeamJob(owner,await r.json()));
 if(action==='team-retry'&&r.method==='POST')return response(await retryTeamJob(owner,await r.json()));
 if(action==='team-decision'&&r.method==='POST')return response(await decideTeamJob(owner,await r.json()));
 if(action==='flight-airports'&&r.method==='POST')return response(searchAirports(String((await r.json() as any).query||'')));
