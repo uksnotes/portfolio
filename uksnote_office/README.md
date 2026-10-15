@@ -21,7 +21,7 @@
 | --- | --- |
 | 홈·메뉴·뉴스 | `office.tsx`, `page.tsx`, `layout.tsx` |
 | 3D 사무실·캐릭터 | `scene.tsx` |
-| AI 팀 | `team-office.tsx`(진행), `team-intake.tsx`(대표 결정 질문 5개), `team-report.tsx`(표 보고서), `team-report-export.ts`(Word·PDF) |
+| AI 팀 | `team-office.tsx`(진행), `team-intake.tsx`(대표 결정: 참여 담당자 + 질문 5개), `team-report.tsx`(표 보고서), `team-report-export.ts`(Word·PDF) |
 | 여행 | `travel-office.tsx`, `travel-itinerary-*.tsx`(일정표·맛집·지도) |
 | 항공권 | `flight-results.tsx`, `airport-picker.tsx` |
 | 부동산 | `apartment-office.tsx`, `royal-ranking.tsx` |
@@ -74,7 +74,7 @@
 - 항공권: Kiwi 실시간 조회, 왕복·직항·최저가 및 서로 다른 항공사 조합. Skyscanner는 외부 비교 링크
 - 공통 AI: Claude·Gemini·ChatGPT 키를 계정별 암호화 저장. 하나만 등록하면 해당 서비스만 사용
 - 부동산: 매매 59·84㎡, 실거래·중개사 매물·로얄동 근거 확인
-- AI 팀: 대표 결정 질문 5개 → 비서실장·리서치(웹 검색)·분석(투자 업무만)·검증(웹 검색)·보고서. 최종 보고서는 표 위주 3페이지 이내, Word·PDF 다운로드
+- AI 팀: 대표 결정 질문 5개 → 비서실장·리서치(웹 검색)·분석(선택)·검증(웹 검색, 선택)·보고서. 분석·검증은 대표 결정 첫 단계에서 뺄 수 있음(AI 추천). 최종 보고서는 표 위주 3페이지 이내, Word·PDF 다운로드
 - 투자·뉴스·일정·메일 초안
 
 ## 포함하지 않은 것
