@@ -1,13 +1,16 @@
 import {providerConfig,submitTeamResponse,pollTeamResponse,cancelTeamResponse} from './ai-provider';
 import {db,records,setting} from './server';
-import {AI_TEAM,TEAM_MODEL,SEARCH_ROLES,DONE_STEPS,teamModel} from './ai-team';
+import {AI_TEAM,TEAM_MODEL,SEARCH_ROLES,DONE_STEPS,OPTIONAL_ROLES,skippedRoles,teamModel} from './ai-team';
 import {responseResult,intakeResult,citedSources,aiFailureMessage} from './sol';
 import {RESEARCH_TIMEOUT,FINAL_TIMEOUT} from './ai-gateway';
 const now=()=>new Date().toISOString();
 // 답변을 기다리는 업무도 진행 중으로 본다. 계정당 하나만 진행할 수 있다.
 const ACTIVE="jsonb_extract_path_text(data::jsonb,'status') IN ('running','awaiting_answers')";
-// 대표 답변에서 투자 업무가 아니라고 정하면 데이터 분석가 단계는 실행하지 않는다.
-function teamSteps(brief?:any){return AI_TEAM.map(a=>({role:a.id,status:a.id==='analyst'&&brief?.investment===false?'skipped':'queued',attempts:0}));}
+// 대표가 건너뛰기로 한 담당자(데이터 분석가·검증 담당자)는 실행하지 않는다.
+function teamSteps(brief?:any){const skip=skippedRoles(brief);return AI_TEAM.map(a=>({role:a.id,status:skip.includes(a.id)?'skipped':'queued',attempts:0}));}
+// 검증을 건너뛴 보고서에는 AI가 빠뜨려도 미검증 사실을 맨 앞에 남긴다.
+const UNVERIFIED='검증 단계를 거치지 않아 사실·수치가 교차 확인되지 않았습니다.';
+function markUnverified(job:any,step:any){if(step.role!=='writer'||!skippedRoles(job.brief).includes('reviewer'))return;const rest=(step.result.uncertainties||[]).filter((u:string)=>!u.includes('검증 단계'));step.result.uncertainties=[UNVERIFIED,...rest].slice(0,6);}
 function publicJob(row:any){const {leaseToken,leaseUntil,context,...job}=row;return {...job,contextInfo:context?{asOf:context.asOf,holdings:context.holdings.length,news:context.news.length,sources:context.sources}:undefined,steps:job.steps.map((s:any)=>{const {responseId,...step}=s;return step;}),archives:(job.archives||[]).map((a:any)=>({...a,steps:a.steps.map((s:any)=>{const {responseId,...step}=s;return step;})}))};}
 async function getJob(owner:string,id:string){if(typeof id!=='string'||!/^ai-[a-f0-9-]{36}$/.test(id))throw new Error('업무 번호를 확인하세요.');const row:any=await db().prepare("SELECT * FROM records WHERE id=? AND owner=? AND kind='ai-job'").bind(id,owner).first();if(!row)throw new Error('업무를 찾을 수 없습니다.');return {...JSON.parse(row.data),id:row.id,version:row.version};}
 async function persist(owner:string,job:any){const {id,version,...data}=job;const result=await db().prepare("UPDATE records SET data=?,version=version+1,updated=? WHERE id=? AND owner=? AND kind='ai-job' AND version=? AND (?<>'running' OR NOT EXISTS (SELECT 1 FROM records other WHERE other.owner=? AND other.kind='ai-job' AND other.id<>? AND jsonb_extract_path_text(other.data::jsonb,'status') IN ('running','awaiting_answers')))").bind(JSON.stringify(data),now(),id,owner,version,data.status,owner,id).run();if(!result.meta.changes)throw new Error('다른 화면에서 업무가 변경되었습니다. 최신 상태를 다시 확인하세요.');job.version++;return job;}
@@ -28,7 +31,7 @@ export async function advanceTeamJob(owner:string,id:string){let job=await getJo
   if(step.responseId){try{response=await pollTeamResponse(owner,job,step.responseId);}catch(e){job.lastPollError=(e as Error).message;step.pollFailures=(step.pollFailures||0)+1;if(step.pollFailures>=3){step.retryPoll=true;throw e;}job.leaseUntil=0;await persist(owner,job);return publicJob(job);}}
   else{step.status='starting';step.startedAt=now();step.attempts++;await persist(owner,job);response=await submitTeamResponse(owner,job,index);if(!response.id||typeof response.id!=='string')throw new Error('AI 요청 번호를 받지 못했습니다.');step.responseId=response.id;step.status='running';if(job.provider!=='anthropic')await persist(owner,job);}
   job.lastPollError='';step.pollFailures=0;step.retryPoll=false;
-  if(response.status==='completed'){step.result=step.role==='intake'?intakeResult(response):responseResult(response);step.model=response.model||job.model||TEAM_MODEL;step.sources=citedSources(response);step.usage=response.usage?{input:response.usage.input_tokens||0,output:response.usage.output_tokens||0,total:response.usage.total_tokens||0}:null;step.status='complete';step.completedAt=now();if(step.role==='intake')job.status='awaiting_answers';else if(job.steps.every((s:any)=>DONE_STEPS.includes(s.status)))job.status='awaiting_decision';}
+  if(response.status==='completed'){step.result=step.role==='intake'?intakeResult(response):responseResult(response);step.model=response.model||job.model||TEAM_MODEL;step.sources=citedSources(response);step.usage=response.usage?{input:response.usage.input_tokens||0,output:response.usage.output_tokens||0,total:response.usage.total_tokens||0}:null;markUnverified(job,step);step.status='complete';step.completedAt=now();if(step.role==='intake')job.status='awaiting_answers';else if(job.steps.every((s:any)=>DONE_STEPS.includes(s.status)))job.status='awaiting_decision';}
   else if(!['queued','in_progress'].includes(response.status))throw new Error(response.status==='incomplete'?'응답 길이 제한으로 분석을 마치지 못했습니다. 지시를 간결하게 수정해 주세요.':aiFailureMessage(response.error?.code));
  }catch(e){step.status='error';step.error=(e as Error).message;job.status='error';}
  job.leaseUntil=0;try{await persist(owner,job);}catch{return publicJob(await getJob(owner,id));}return publicJob(job);}
@@ -39,6 +42,7 @@ export async function decideTeamJob(owner:string,b:any){const job=await getJob(o
  if(b.action==='cancel'){const current=job.steps.find((s:any)=>s.status==='running'&&s.responseId);if(current)try{await cancelTeamResponse(owner,job,current.responseId);}catch{/* Cancellation is best effort; no further stage will be started. */}}
  return publicJob(job);}
 export async function answerTeamJob(owner:string,b:any){const job=await getJob(owner,b.id);if(job.status!=='awaiting_answers'||job.version!==b.version)throw new Error('최신 업무 상태에서 답변을 제출하세요.');const questions=job.steps.find((s:any)=>s.role==='intake')?.result?.questions||[];const answers=Array.isArray(b.answers)?b.answers.map((a:any)=>typeof a==='string'?a.trim():''):[];
- if(questions.length!==5||answers.length!==5||answers.some((a:string)=>!a||a.length>300))throw new Error('질문 5개에 모두 답하세요. 답변은 300자 이내로 입력하세요.');if(typeof b.investment!=='boolean')throw new Error('투자 관련 업무인지 선택하세요.');
+ if(questions.length!==5||answers.length!==5||answers.some((a:string)=>!a||a.length>300))throw new Error('질문 5개에 모두 답하세요. 답변은 300자 이내로 입력하세요.');// skip: 건너뛸 선택 담당자 목록. 예전 화면이 보내는 investment(false = 데이터 분석가 건너뜀)도 받는다.
+ const skip=Array.isArray(b.skip)?b.skip:typeof b.investment==='boolean'?(b.investment?[]:['analyst']):null;if(!skip||skip.some((r:any)=>!OPTIONAL_ROLES.includes(r)))throw new Error('참여할 담당자를 선택하세요. 데이터 분석가와 검증 담당자만 건너뛸 수 있습니다.');
  const active=await db().prepare("SELECT id FROM records WHERE owner=? AND kind='ai-job' AND "+ACTIVE+" AND id<>?").bind(owner,b.id).first();if(active)throw new Error('다른 진행 중인 업무를 먼저 완료하세요.');
- job.brief={investment:b.investment,answers:questions.map((q:any,i:number)=>({question:q.question,answer:answers[i]})),answeredAt:now()};job.steps=[...job.steps.filter((s:any)=>s.role==='intake'),...teamSteps(job.brief)];job.status='running';job.leaseUntil=0;await persist(owner,job);return publicJob(job);}
+ job.brief={skip:OPTIONAL_ROLES.filter(r=>skip.includes(r)),answers:questions.map((q:any,i:number)=>({question:q.question,answer:answers[i]})),answeredAt:now()};job.steps=[...job.steps.filter((s:any)=>s.role==='intake'),...teamSteps(job.brief)];job.status='running';job.leaseUntil=0;await persist(owner,job);return publicJob(job);}

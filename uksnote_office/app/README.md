@@ -3,6 +3,7 @@
 | 핵심 파일 | 역할 |
 | --- | --- |
 | `office.tsx` | 로그인, 홈, 메뉴, 일정·투자·뉴스 화면 연결 |
+| `landing.tsx` | 로그인 전 첫 화면(서비스 소개). `/`는 소개, `/login`은 로그인 폼 |
 | `scene.tsx` | 3D 오피스와 캐릭터 |
 | `travel-office.tsx` | 여행 검색 조건과 저장 결과 |
 | `travel-itinerary-results.tsx` | 전체 일정표 / 맛집 리스트 / 지도 탭 |
