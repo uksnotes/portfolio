@@ -1,8 +1,6 @@
 // 로컬 개발 전용 AI 경로. production에서는 항상 실제 API로 보낸다.
 // AI_DEV=claude-code: Claude 요청을 로컬 Claude Code CLI(claude -p, claude.ai 구독 로그인)로 실행한다. API 크레딧 없이 실제 응답 품질을 확인할 때 쓴다.
 // AI_DEV=mock: OpenAI·Claude·Gemini 요청을 요청에 담긴 JSON 스키마대로 만든 가짜 결과로 대체한다. 화면 흐름만 확인할 때 쓴다.
-import {spawn} from 'node:child_process';
-import {tmpdir} from 'node:os';
 const HOSTS=['api.openai.com','api.anthropic.com','generativelanguage.googleapis.com'];
 const SOURCE={url:'https://example.com/mock-source',title:'[모의] 검색 출처'};
 const DELAY=Number(process.env.AI_DEV_MOCK_DELAY_MS??800);
@@ -66,6 +64,8 @@ async function claudeCode(init:RequestInit){
  const args=['-p','--output-format','stream-json','--verbose','--no-session-persistence','--strict-mcp-config','--disable-slash-commands','--setting-sources','','--system-prompt',String(body.system||''),'--model',process.env.AI_DEV_MODEL||CLI_MODEL(String(body.model)),'--tools',search?'WebSearch':'',...(search?['--allowedTools','WebSearch']:[]),...(schema?['--json-schema',JSON.stringify(schema)]:[]),...(process.env.AI_DEV_EFFORT?['--effort',process.env.AI_DEV_EFFORT]:[])];
  // .env.local의 API 키가 넘어가면 CLI가 구독 대신 그 키(잔액 없음)를 쓴다.
  const env={...process.env};for(const k of ['ANTHROPIC_API_KEY','ANTHROPIC_AUTH_TOKEN','OPENAI_API_KEY','GEMINI_API_KEY'])delete env[k];
+ // 개발 모드에서만 불러온다. 정적 import는 배포 번들 추적이 프로젝트 전체로 번진다.
+ const [{spawn},{tmpdir}]=await Promise.all([import(/* turbopackIgnore: true */ 'node:child_process'),import(/* turbopackIgnore: true */ 'node:os')]);
  const started=Date.now();
  const out=await new Promise<string>((resolve,reject)=>{
   const child=spawn(process.env.CLAUDE_BIN||'claude',args,{cwd:tmpdir(),env,signal:init.signal||undefined});let stdout='',stderr='';
