@@ -1,4 +1,4 @@
-# UK'S OFFICE 소스 코드
+# BrainCrews 소스 코드
 
 2026-10-13 배포 버전 기준 · 소스 커밋 `09d0667cf64fa5500e1ddc892262e37b6ce636e4`
 

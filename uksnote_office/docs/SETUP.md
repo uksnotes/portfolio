@@ -135,6 +135,10 @@ cp .env.example .env.local   # 값 채우기 (Supabase 프로젝트 하나를 �
 pnpm dev                     # http://localhost:3000
 ```
 
+- **API 크레딧 없이 테스트** (`lib/ai-dev.ts`, production에서는 무시)
+  - `AI_DEV=claude-code`: Claude 요청을 로컬 `claude -p`로 실행합니다. Claude Code에 claude.ai 계정으로 로그인돼 있어야 하고(`claude auth status`), 구독 사용량에 포함됩니다. 앱의 프롬프트·스키마를 그대로 보내 실제 응답 품질을 확인할 수 있습니다. 웹 검색은 CLI의 WebSearch 도구를 쓰고 출처는 검색 결과 링크에서만 가져옵니다. 앱에서 Claude 모델을 고르고, 키 칸에는 아무 값(20자 이상)이나 저장하면 됩니다
+  - `AI_DEV=mock`: OpenAI·Claude·Gemini를 호출하지 않고 요청 스키마대로 만든 `[모의]` 응답을 씁니다. 화면 흐름만 볼 때 사용. 지연은 `AI_DEV_MOCK_DELAY_MS`(기본 800)
+
 ## 확인 명령
 
 ```bash
